@@ -7,14 +7,12 @@ import { useNavigate } from "react-router-dom";
 
 const Pokedex = ({ name }) => {
   const [pokemons, getPokemons] = useFetch();
-  const [isLoading, setIsLoading] = useState(true);
 
   const navigate = useNavigate();
 
   useEffect(() => {
     const url = "https://pokeapi.co/api/v2/pokemon?limit=150&offset=0";
-    setIsLoading(true); // Establece que se está cargando antes de la solicitud
-    getPokemons(url).finally(() => setIsLoading(false)); // Asegura que se desactiva la carga después de la solicitud
+    getPokemons(url) 
   }, []);
 
   console.log(pokemons);
@@ -59,13 +57,11 @@ const Pokedex = ({ name }) => {
         <PokemonTypeDropdown />
       </div>
       <div className="info-container">
-        {isLoading ? (
-          <div className="pokeball-loader"></div> // Loader general mientras se cargan todos los datos
-        ) : (
+        {
           pokemons?.results.map((pokemon) => (
             <PokeCard key={pokemon.name} pokemon={pokemon} />
           ))
-        )}
+        }
       </div>
     </div>
   );

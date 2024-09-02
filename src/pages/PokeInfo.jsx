@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import "./PokeInfo.css";
@@ -7,10 +7,12 @@ export const PokeInfo = () => {
   const { name } = useParams();
   const navigate = useNavigate();
   const [data, getData] = useFetch();
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const url = `https://pokeapi.co/api/v2/pokemon/${name}`;
     getData(url);
+    setIsLoading(false)
   }, []);
 
   console.log(data);
@@ -24,7 +26,7 @@ export const PokeInfo = () => {
       <div className="footer-container">
         <footer>
           <div className="red-color">
-            <img src="/98042af437fdff212d3259040db2e2db.png" alt="" />
+              <img src="/98042af437fdff212d3259040db2e2db.png" alt="" />
           </div>
           <div className="black-color">
             <div className="circle">
@@ -40,8 +42,10 @@ export const PokeInfo = () => {
       </a>
       <div className="master-container">
         <div className="card-one-container">
-          <div>
-            <img src={data?.sprites.other.showdown.front_default} alt="" />
+          <div>{
+            isLoading ? (<div className="pokeball-loader"></div>) :
+            (<img src={data?.sprites.other.showdown.front_default} alt="" />)
+            }
           </div>
           <div className="data-main-info">
             <p>#{data?.id}</p>

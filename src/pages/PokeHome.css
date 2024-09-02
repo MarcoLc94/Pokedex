@@ -1,7 +1,8 @@
 .Main-Poke {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    position: relative; /* Necesario para la pseudo-clase ::before */
-    overflow: hidden; /* Asegura que el contenido adicional no se desborde */
+    position: relative; 
+    overflow: hidden; 
+    height: 100vh;
 
     a{
 
@@ -51,6 +52,8 @@
         color: white;
         letter-spacing: 30px;
         filter: drop-shadow(10px 10px 15px white);
+        width: 80vw;
+        text-align: center;
     }
 
     p{
@@ -79,7 +82,7 @@
     background-color: black;
     opacity: 0.8;
     display: flex;
-    height: 10vh;
+    height: 5vh;
     align-items: center;
     justify-content: center;
     color: white;
@@ -98,5 +101,15 @@
     }
     50% {
         transform: translateY(-30px); /* Mover hacia arriba */
+    }
+}
+
+@media(width < 500px ) {
+    .PokeHome {
+
+        h1{
+            letter-spacing: 15px;
+            text-align: center;
+        }
     }
 }

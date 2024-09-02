@@ -265,3 +265,12 @@
       opacity: 1; /* Termina visible */
   }
 }
+
+.loader {
+  border: 8px solid rgba(0, 0, 0, 0.1); /* Fondo del aro (color tenue) */
+  border-left: 8px solid red; /* Color del aro (parte visible) */
+  border-radius: 50%;
+  width: 80px; /* Tamaño del aro */
+  height: 80px; /* Tamaño del aro */
+  animation: spin 1s linear infinite; /* Animación de rotación */
+}
