@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import "./home.css";
+import "./Home.css";
 import { useNavigate } from "react-router-dom";
 
 const Home = ({ setIsLogged, setName }) => {
