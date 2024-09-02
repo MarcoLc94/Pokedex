@@ -5,6 +5,7 @@ import Pokedex from "./pages/Pokedex";
 import { PokeInfo } from "./pages/PokeInfo";
 import { useState } from "react";
 import { ProtectedRoute } from "./pages/ProtectedRoute";
+import { PokeHome } from "./pages/PokeHome";
 
 function App() {
   const [isLogged, setIsLogged] = useState(false);
@@ -15,8 +16,9 @@ function App() {
   return (
     <div>
       <Routes>
+        <Route path="/" element={<PokeHome/>}/>
         <Route
-          path="/"
+          path="/home"
           element={
             <Home setIsLogged={setIsLogged} setName={setName} name={name} />
           }

@@ -1,4 +1,4 @@
-import {useRef, useState } from "react";
+import { useRef, useState } from "react";
 import "../pages/home.css";
 import { useNavigate } from "react-router-dom";
 
@@ -7,7 +7,7 @@ const Home = ({ setIsLogged, setName }) => {
   const [isLoading, setIsLoading] = useState(false);
   const nameInput = useRef();
   const navigate = useNavigate();
-  
+
   const handleLogin = (event) => {
     event.preventDefault();
     if (nameInput.current.value.trim() && nameInput.current.value.length >= 3) {
@@ -19,22 +19,26 @@ const Home = ({ setIsLogged, setName }) => {
         navigate("/pokedex");
       }, 2000);
     } else {
-      if(nameInput.current.value.length <= 3){
-        setError(400)
+      if (nameInput.current.value.length <= 3) {
+        setError(400);
       } else {
-      setError(true);
+        setError(true);
       }
     }
   };
 
   const handleHome = () => {
-    navigate("/")
-  }
+    navigate("/");
+  };
 
   return (
     <div className="home-container">
       <div className="image-container">
-        <img src="/98042af437fdff212d3259040db2e2db.png" alt="pokedex" onClick={handleHome}/>
+        <img
+          src="/98042af437fdff212d3259040db2e2db.png"
+          alt="pokedex"
+          onClick={handleHome}
+        />
       </div>
       <div className="text-container">
         <h1>¡Hola Entrenador!</h1>
@@ -43,13 +47,20 @@ const Home = ({ setIsLogged, setName }) => {
       </div>
       <form className="form-container">
         <div className="input-container">
-          <img src="/images-removebg-preview.png" alt="" />
+          <img  src="/images-removebg-preview.png" alt="" />
           <input type="text" placeholder="Tu nombre..." ref={nameInput} />
           <button onClick={handleLogin}>Comenzar</button>
         </div>
         {isLoading && <div className="pokeball-loader"></div>}
-        { error === 400 ? (<p className="shake-animation">⚠ Tu nombre debe contener por lo menos 3 caracteres.</p>) : (<p className="shake-animation">⚠ Por favor indica tu nombre.</p>)}
+        {error === 400 ? (
+          <p className="shake-animation">
+            ⚠ Tu nombre debe contener por lo menos 3 caracteres.
+          </p>
+        ) : (
+          <p className="shake-animation">⚠ Por favor indica tu nombre.</p>
+        )}
       </form>
+      
       <div className="footer-container">
         <footer>
           <div className="red-color"></div>
