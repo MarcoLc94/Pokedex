@@ -103,9 +103,9 @@
   .master-container {
     display: flex;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     justify-content: center;
-    height: 80vh;
+    height: 80%;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     flex-direction: column;
 
@@ -163,7 +163,7 @@
       height: 50vh;
       background-color: gray;
       margin: 10px;
-      width: 80%;
+      width: 81%;
       text-align: center;
 
       h2 {
@@ -213,5 +213,242 @@
         transform: rotate(360deg); /* Gira hasta 360 grados */
     }
   }
+
+
+  /* Tipo Grass */
+.backg-grass {
+  border: 8px solid #228B22; /* Verde oscuro */
+  background: linear-gradient(to bottom, #A2CFA5, #8CCB8F, #6B8B5F, #2D3A24); /* Degradado verde claro a negro */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Tipo Fire */
+.backg-fire {
+  border: 8px solid #FF6347; /* Rojo anaranjado */
+  background: linear-gradient(to bottom, #FF6F61, #FF7F50, #FF6347, #4B0000); /* Degradado rojo claro a negro */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Tipo Water */
+.backg-water {
+  border: 8px solid #1E90FF; /* Azul */
+  background: linear-gradient(to bottom, #87CEFA, #4682B4, #1E90FF, #003366); /* Degradado azul claro a negro */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Tipo Electric */
+.backg-electric {
+  border: 8px solid #FFD700; /* Dorado */
+  background: linear-gradient(to bottom, #FFFFE0, #FFFF00, #FFD700, #4B4B4B); /* Degradado amarillo claro a negro */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Tipo Rock */
+.backg-rock {
+  border: 8px solid #808080; /* Gris */
+  background: linear-gradient(to bottom, #D3D3D3, #A9A9A9, #808080, #2F4F4F); /* Degradado gris claro a negro */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Tipo Psychic */
+.backg-psychic {
+  border: 8px solid #DA70D6; /* Rosa púrpura */
+  background: linear-gradient(to bottom, #E6AEE6, #DA70D6, #8B008B, #3A0A3A); /* Degradado rosa claro a negro */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Tipo Ice */
+.backg-ice {
+  border: 8px solid #00FFFF; /* Cian */
+  background: linear-gradient(to bottom, #E0FFFF, #00FFFF, #00CED1, #004D4D); /* Degradado cian claro a negro */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Tipo Dragon */
+.backg-dragon {
+  border: 8px solid #4B0082; /* Índigo oscuro */
+  background: linear-gradient(to bottom, #6A5ACD, #4B0082, #2E0854, #000000); /* Degradado índigo claro a negro */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Tipo Dark */
+.backg-dark {
+  border: 8px solid #000000; /* Negro */
+  background: linear-gradient(to bottom, #2F4F4F, #000000, #101010, #000000); /* Degradado gris oscuro a negro puro */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Tipo Fairy */
+.backg-fairy {
+  border: 8px solid #FF69B4; /* Rosa brillante */
+  background: linear-gradient(to bottom, #FFB6C1, #FF69B4, #FF1493, #6B002B); /* Degradado rosa claro a negro */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Tipo Normal */
+.backg-normal {
+  border: 8px solid #C0C0C0; /* Plateado */
+  background: linear-gradient(to bottom, #F5F5F5, #C0C0C0, #A9A9A9, #404040); /* Degradado gris claro a negro */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Tipo Fighting */
+.backg-fighting {
+  border: 8px solid #C04000; /* Marrón rojizo */
+  background: linear-gradient(to bottom, #F4A460, #C04000, #8B4513, #3B1F1F); /* Degradado marrón claro a negro */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Tipo Flying */
+.backg-flying {
+  border: 8px solid #87CEEB; /* Azul cielo */
+  background: linear-gradient(to bottom, #B0E0E6, #87CEEB, #4682B4, #003366); /* Degradado azul claro a negro */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Tipo Poison */
+.backg-poison {
+  border: 8px solid #9932CC; /* Púrpura oscuro */
+  background: linear-gradient(to bottom, #DDA0DD, #9932CC, #8B008B, #2D0042); /* Degradado púrpura claro a negro */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Tipo Ground */
+.backg-ground {
+  border: 8px solid #DEB887; /* Marrón claro */
+  background: linear-gradient(to bottom, #F5DEB3, #DEB887, #D2B48C, #3B2A1F); /* Degradado marrón claro a negro */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Tipo Bug */
+.backg-bug {
+  border: 8px solid #A8B820; /* Verde oliva */
+  background: linear-gradient(to bottom, #C0D9A8, #A8B820, #6B8E23, #2F4F2F); /* Degradado verde claro a negro */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Tipo Ghost */
+.backg-ghost {
+  border: 8px solid #483D8B; /* Púrpura oscuro */
+  background: linear-gradient(to bottom, #6A5ACD, #483D8B, #2E0854, #1C1C1C); /* Degradado púrpura claro a negro */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Tipo Steel */
+.backg-steel {
+  border: 8px solid #708090; /* Azul acero */
+  background: linear-gradient(to bottom, #B0C4DE, #708090, #2F4F4F, #1C1C1C); /* Degradado azul claro a negro */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Tipo Grass */
+.shadow-grass {
+  filter: drop-shadow(0px 0px 8px #228B22); /* Sombra verde oscuro */
+}
+
+/* Tipo Fire */
+.shadow-fire {
+  filter: drop-shadow(0px 0px 8px #FF6347); /* Sombra rojo anaranjado */
+}
+
+/* Tipo Water */
+.shadow-water {
+  filter: drop-shadow(0px 0px 8px #1E90FF); /* Sombra azul */
+}
+
+/* Tipo Electric */
+.shadow-electric {
+  filter: drop-shadow(0px 0px 8px #FFD700); /* Sombra dorado */
+}
+
+/* Tipo Rock */
+.shadow-rock {
+  filter: drop-shadow(0px 0px 8px #808080); /* Sombra gris */
+}
+
+/* Tipo Psychic */
+.shadow-psychic {
+  filter: drop-shadow(0px 0px 8px #DA70D6); /* Sombra rosa púrpura */
+}
+
+/* Tipo Ice */
+.shadow-ice {
+  filter: drop-shadow(0px 0px 8px #00FFFF); /* Sombra cian */
+}
+
+/* Tipo Dragon */
+.shadow-dragon {
+  filter: drop-shadow(0px 0px 8px #4B0082); /* Sombra índigo oscuro */
+}
+
+/* Tipo Dark */
+.shadow-dark {
+  filter: drop-shadow(0px 0px 8px #000000); /* Sombra negra */
+}
+
+/* Tipo Fairy */
+.shadow-fairy {
+  filter: drop-shadow(0px 0px 8px #FF69B4); /* Sombra rosa brillante */
+}
+
+/* Tipo Normal */
+.shadow-normal {
+  filter: drop-shadow(0px 0px 8px #C0C0C0); /* Sombra plateado */
+}
+
+/* Tipo Fighting */
+.shadow-fighting {
+  filter: drop-shadow(0px 0px 8px #C04000); /* Sombra marrón rojizo */
+}
+
+/* Tipo Flying */
+.shadow-flying {
+  filter: drop-shadow(0px 0px 8px #87CEEB); /* Sombra azul cielo */
+}
+
+/* Tipo Poison */
+.shadow-poison {
+  filter: drop-shadow(0px 0px 8px #9932CC); /* Sombra púrpura oscuro */
+}
+
+/* Tipo Ground */
+.shadow-ground {
+  filter: drop-shadow(0px 0px 8px #DEB887); /* Sombra marrón claro */
+}
+
+/* Tipo Bug */
+.shadow-bug {
+  filter: drop-shadow(0px 0px 8px #A8B820); /* Sombra verde oliva */
+}
+
+/* Tipo Ghost */
+.shadow-ghost {
+  filter: drop-shadow(0px 0px 8px #483D8B); /* Sombra púrpura oscuro */
+}
+
+/* Tipo Steel */
+.shadow-steel {
+  filter: drop-shadow(0px 0px 8px #708090); /* Sombra azul acero */
+}
+
+
 }
 
