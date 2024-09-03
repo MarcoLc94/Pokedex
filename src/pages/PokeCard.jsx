@@ -41,11 +41,13 @@ const PokeCard = ({ pokemon }) => {
   const style = {
     display: isLoading ? 'flex' : 'grid',
   };
+  
+  
 
   return (
     <div>
       <div className="card-container-inside">
-        <div>
+        <div className={`img-background bg-${pokeInfo?.types[0].type.name}`}>
           {isLoading ? 
             (<div className="pokeball-loader"></div>) :
             (<img

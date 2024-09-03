@@ -51,7 +51,7 @@ const Home = ({ setIsLogged, setName }) => {
           <input type="text" placeholder="Tu nombre..." ref={nameInput} />
           <button onClick={handleLogin}>Comenzar</button>
         </div>
-        {isLoading && <div className="pokeball-loader"></div>}
+        {isLoading && <div className="pokeball-loader1"></div>}
         {error === 400 ? (
           <p className="shake-animation">
             ⚠ Tu nombre debe contener por lo menos 3 caracteres.

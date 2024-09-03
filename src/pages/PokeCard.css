@@ -1,158 +1,561 @@
 .card-container-inside {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  align-items: center;
+  justify-content: safe;
+  border: gray 5px solid;
+  padding: 10px;
+  margin: 10px;
+  min-height: 520px;
+  position: relative;
+  aspect-ratio: 1.8;
+  border-radius: 7px 7px 7px 7px;
+
+  .img-background {
+    width: 100%;
+    height: 80%;
+    background-color: gray;
+  }
+
+  p {
+    padding: 5px;
+  }
+
+  hr {
+    width: 100%;
+  }
+
+  img {
+    max-width: 25vw;
+    max-height: 20vh;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+  .card-info-inside {
+    text-align: center;
+    text-transform: capitalize;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     flex-direction: column;
-    width: 30vw;
     align-items: center;
-    justify-content: space-around;
-    border: gray 2px solid;
+    justify-content: center;
+
+    .types-poke {
+      display: flex;
+    }
+
+    .types-poke > :nth-child(2)::before {
+      content: "/";
+      padding-right: 15px;
+    }
+  }
+
+  .card-info-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    flex-wrap: wrap;
     padding: 10px;
-    margin: 10px;
-    min-height: 600px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 
-    p {
-        padding: 10px;
-    }
+    .stat-num {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
 
-    hr{
-        width: 100%;
-    }
-
-    img {
-        max-width: 20vw;
-        max-height: 15vh;
-    }
-
-    img:hover {
-        transform: scale(1.1);
-        cursor: pointer;
-        
-    }
-    
-    
-    .card-info-inside {
-        text-align: center;
+      span {
         text-transform: capitalize;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
 
-        .types-poke{
-            display: flex;
-            gap: 30px;
-        }
+      .span-title {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .button-card-cry {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+
+    button {
+      padding: 10px 15px 10px 15px;
+      border: none;
+      font-weight: 600;
     }
 
-    .card-info-details {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        flex-wrap: wrap;
-       padding: 10px;
-       text-align: center;
-       justify-content: center;
-       align-items: center;
-       gap: 10px;
-
-
-        .stat-num {
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            gap: 10px;
-            
-            span{
-              text-transform: capitalize;
-              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            }
-
-            .span-title {
-                font-weight: 600;
-            }
-        }
+    button:hover {
+      transform: scale(1.1);
     }
 
-    .button-card-cry {
-        padding: 10px;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 10px;
-
-        button {
-            padding: 10px 15px 10px 15px;
-            border: none;
-            font-weight: 600;
-        }
-
-        button:hover {
-            transform: scale(1.1);
-        }
-
-        a {
-            padding: 10px 15px 10px 15px;
-            border: none;
-            font-weight: 600;
-            background-color: rgb(241, 241, 241);
-        }
-
-        a:hover {
-            transform: scale(1.1);
-        }
+    a {
+      padding: 10px 15px 10px 15px;
+      border: none;
+      font-weight: 600;
+      background-color: rgb(241, 241, 241);
     }
+
+    a:hover {
+      transform: scale(1.1);
+    }
+  }
 }
 
-
-@media(width < 560px) {
-    .card-container-inside{
-        width: 70vw;
-    }
+@media (width < 560px) {
+  .card-container-inside {
+    width: 70vw;
+  }
 }
 
-@media(width >799px ) {
-    .card-container-inside{
-        width: 20vw
-    }
+@media (width >799px) {
+  .card-container-inside {
+    width: 20vw;
+  }
 }
 
 .pokeball-loader {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: linear-gradient(to bottom, #fff 50%, #f00 50%);
-    position: relative;
-    animation: spin 1s linear infinite;
-    box-shadow: inset -2px 0 0 2px black;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #fff 50%, #f00 50%);
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  animation: spin 1s linear infinite;
+  box-shadow: inset -2px 0 0 2px black;
+}
+
+.pokeball-loader::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: black;
+  transform: translateY(-50%);
+}
+
+.pokeball-loader::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid black;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  .pokeball-loader::before {
-    content: '';
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Normal */
+.bg-normal {
+    position: relative; /* Asegura que el pseudo-elemento se posicione relativamente a .bg-grass */
+    background: url("/normal.gif");
+    background-size: cover;
+    object-fit: cover;
+    overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
+}
+
+.bg-normal::before {
+    content: "";
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 0;
     right: 0;
-    height: 4px;
-    background: black;
-    transform: translateY(-50%);
-  }
-  
-  .pokeball-loader::after {
-    content: '';
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Color negro con opacidad del 50% */
+    pointer-events: none; /* Permite que los eventos de clic pasen a los elementos hijos */
+    z-index: 1; /* Coloca el pseudo-elemento sobre la imagen de fondo */
+}
+
+/* Asegura que el contenido dentro de .bg-grass esté por encima del overlay */
+.bg-normal > * {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(10px 10px 30px rgb(243, 243, 243)); 
+}
+
+/* Fuego */
+.bg-fire {
+    position: relative; /* Asegura que el pseudo-elemento se posicione relativamente a .bg-grass */
+    background: url("/fire.gif");
+    background-size: cover;
+    object-fit: cover;
+    overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
+}
+
+.bg-fire::before {
+    content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: #fff;
-    border: 4px solid black;
-    transform: translate(-50%, -50%);
-  }
-  
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Color negro con opacidad del 50% */
+    pointer-events: none; /* Permite que los eventos de clic pasen a los elementos hijos */
+    z-index: 1; /* Coloca el pseudo-elemento sobre la imagen de fondo */
+}
+
+/* Asegura que el contenido dentro de .bg-grass esté por encima del overlay */
+.bg-fire > * {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(10px 10px 30px rgb(255, 1, 1)); 
+}
+
+/* Agua */
+.bg-water {
+    position: relative; /* Asegura que el pseudo-elemento se posicione relativamente a .bg-grass */
+    background: url("/water.gif");
+    background-size: cover;
+    object-fit: cover;
+    overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
+}
+
+.bg-water::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Color negro con opacidad del 50% */
+    pointer-events: none; /* Permite que los eventos de clic pasen a los elementos hijos */
+    z-index: 1; /* Coloca el pseudo-elemento sobre la imagen de fondo */
+}
+
+/* Asegura que el contenido dentro de .bg-grass esté por encima del overlay */
+.bg-water > * {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(10px 10px 30px rgb(1, 69, 255)); 
+}
+
+/* Eléctrico */
+.bg-electric {
+    position: relative; /* Asegura que el pseudo-elemento se posicione relativamente a .bg-grass */
+    background: url("/electric.gif");
+    background-size: cover;
+    object-fit: cover;
+    overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
+}
+
+.bg-electric::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Color negro con opacidad del 50% */
+    pointer-events: none; /* Permite que los eventos de clic pasen a los elementos hijos */
+    z-index: 1; /* Coloca el pseudo-elemento sobre la imagen de fondo */
+}
+
+/* Asegura que el contenido dentro de .bg-grass esté por encima del overlay */
+.bg-electric > * {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(10px 10px 30px rgb(255, 251, 1)); 
+}
+
+.bg-grass {
+    position: relative; /* Asegura que el pseudo-elemento se posicione relativamente a .bg-grass */
+    background: url("/grass.gif");
+    background-size: cover;
+    object-fit: cover;
+    overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
+}
+
+.bg-grass::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Color negro con opacidad del 50% */
+    pointer-events: none; /* Permite que los eventos de clic pasen a los elementos hijos */
+    z-index: 1; /* Coloca el pseudo-elemento sobre la imagen de fondo */
+}
+
+/* Asegura que el contenido dentro de .bg-grass esté por encima del overlay */
+.bg-grass > * {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(10px 10px 30px rgb(1, 255, 1)); 
+}
+
+/* Hielo */
+.bg-ice {
+    position: relative; /* Asegura que el pseudo-elemento se posicione relativamente a .bg-grass */
+    background: url("/ice.gif");
+    background-size: cover;
+    object-fit: cover;
+    overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
+}
+
+.bg-ice::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Color negro con opacidad del 50% */
+    pointer-events: none; /* Permite que los eventos de clic pasen a los elementos hijos */
+    z-index: 1; /* Coloca el pseudo-elemento sobre la imagen de fondo */
+}
+
+/* Asegura que el contenido dentro de .bg-grass esté por encima del overlay */
+.bg-ice > * {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(10px 10px 30px rgb(1, 255, 242)); 
+}
+
+/* Lucha */
+.bg-fighting {
+    position: relative; /* Asegura que el pseudo-elemento se posicione relativamente a .bg-grass */
+    background: url("/fighting.gif");
+    background-size: cover;
+    object-fit: cover;
+    overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
+}
+
+.bg-fighting::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Color negro con opacidad del 50% */
+    pointer-events: none; /* Permite que los eventos de clic pasen a los elementos hijos */
+    z-index: 1; /* Coloca el pseudo-elemento sobre la imagen de fondo */
+}
+
+/* Asegura que el contenido dentro de .bg-grass esté por encima del overlay */
+.bg-fighting > * {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(10px 10px 30px rgb(255, 136, 0)); 
+}
+
+/* Veneno */
+.bg-poison {
+    position: relative; /* Asegura que el pseudo-elemento se posicione relativamente a .bg-grass */
+    background: url("/poison2.gif");
+    background-size: cover;
+    object-fit: cover;
+    overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
+}
+
+.bg-poison::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Color negro con opacidad del 50% */
+    pointer-events: none; /* Permite que los eventos de clic pasen a los elementos hijos */
+    z-index: 1; /* Coloca el pseudo-elemento sobre la imagen de fondo */
+}
+
+/* Asegura que el contenido dentro de .bg-grass esté por encima del overlay */
+.bg-poison > * {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(10px 10px 30px rgb(255, 136, 0)); 
+}
+/* Tierra */
+.bg-ground {
+    position: relative; /* Asegura que el pseudo-elemento se posicione relativamente a .bg-grass */
+    background: url("/ground.gif");
+    background-size: cover;
+    object-fit: cover;
+    overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
+}
+
+.bg-ground::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Color negro con opacidad del 50% */
+    pointer-events: none; /* Permite que los eventos de clic pasen a los elementos hijos */
+    z-index: 1; /* Coloca el pseudo-elemento sobre la imagen de fondo */
+}
+
+/* Asegura que el contenido dentro de .bg-grass esté por encima del overlay */
+.bg-ground > * {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(10px 10px 30px rgb(145, 143, 141)); 
+}
+
+/* Volador */
+.bg-flying {
+    position: relative; /* Asegura que el pseudo-elemento se posicione relativamente a .bg-grass */
+    background: url("/flying.gif");
+    background-size: cover;
+    object-fit: cover;
+    overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
+}
+
+.bg-flying::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Color negro con opacidad del 50% */
+    pointer-events: none; /* Permite que los eventos de clic pasen a los elementos hijos */
+    z-index: 1; /* Coloca el pseudo-elemento sobre la imagen de fondo */
+}
+
+/* Asegura que el contenido dentro de .bg-grass esté por encima del overlay */
+.bg-flying > * {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(10px 10px 30px rgb(255, 255, 255)); 
+}
+
+/* Psíquico */
+.bg-psychic {
+    position: relative; /* Asegura que el pseudo-elemento se posicione relativamente a .bg-grass */
+    background: url("/psychic.gif");
+    background-size: cover;
+    object-fit: cover;
+    overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
+}
+
+.bg-psychic::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Color negro con opacidad del 50% */
+    pointer-events: none; /* Permite que los eventos de clic pasen a los elementos hijos */
+    z-index: 1; /* Coloca el pseudo-elemento sobre la imagen de fondo */
+}
+
+/* Asegura que el contenido dentro de .bg-grass esté por encima del overlay */
+.bg-psychic > * {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(10px 10px 30px rgb(189, 47, 255)); 
+}
+/* Bicho */
+.bg-bug {
+    position: relative; /* Asegura que el pseudo-elemento se posicione relativamente a .bg-grass */
+    background: url("/bug.gif");
+    background-size: cover;
+    object-fit: cover;
+    overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
+}
+
+.bg-bug::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Color negro con opacidad del 50% */
+    pointer-events: none; /* Permite que los eventos de clic pasen a los elementos hijos */
+    z-index: 1; /* Coloca el pseudo-elemento sobre la imagen de fondo */
+}
+
+/* Asegura que el contenido dentro de .bg-grass esté por encima del overlay */
+.bg-bug > * {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(10px 10px 30px rgb(123, 255, 0)); 
+}
+/* Roca */
+.bg-rock {
+    position: relative; /* Asegura que el pseudo-elemento se posicione relativamente a .bg-grass */
+    background: url("/rock.gif");
+    background-size: cover;
+    object-fit: cover;
+    overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
+}
+
+.bg-rock::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Color negro con opacidad del 50% */
+    pointer-events: none; /* Permite que los eventos de clic pasen a los elementos hijos */
+    z-index: 1; /* Coloca el pseudo-elemento sobre la imagen de fondo */
+}
+
+/* Asegura que el contenido dentro de .bg-grass esté por encima del overlay */
+.bg-rock > * {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(10px 10px 30px rgb(255, 255, 255)); 
+}
+
+/* Fantasma */
+.bg-ghost {
+    background: linear-gradient(180deg, #705898, #5A3F7A, #362147, #0F0A14);
+}
+
+/* Dragón */
+.bg-dragon {
+    background: linear-gradient(180deg, #7038F8, #4924A1, #2A1461, #0A0428);
+}
+
+/* Siniestro */
+.bg-dark {
+    background: linear-gradient(180deg, #705848, #503828, #2C1D14, #0A0805);
+}
+
+/* Acero */
+.bg-steel {
+    background: linear-gradient(180deg, #B8B8D0, #8484B0, #4D4D70, #1A1A2A);
+}
+
+/* Hada */
+.bg-fairy {
+    background: linear-gradient(180deg, #EE99AC, #D18392, #8B4D5E, #330F1A);
+}
