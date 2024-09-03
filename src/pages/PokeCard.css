@@ -537,25 +537,139 @@
 
 /* Fantasma */
 .bg-ghost {
-    background: linear-gradient(180deg, #705898, #5A3F7A, #362147, #0F0A14);
+    position: relative; /* Asegura que el pseudo-elemento se posicione relativamente a .bg-grass */
+    background: url("/ghost.gif");
+    background-size: cover;
+    object-fit: cover;
+    overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
+}
+
+.bg-ghost::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Color negro con opacidad del 50% */
+    pointer-events: none; /* Permite que los eventos de clic pasen a los elementos hijos */
+    z-index: 1; /* Coloca el pseudo-elemento sobre la imagen de fondo */
+}
+
+/* Asegura que el contenido dentro de .bg-grass esté por encima del overlay */
+.bg-ghost > * {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(10px 10px 30px rgb(95, 95, 95)); 
 }
 
 /* Dragón */
 .bg-dragon {
-    background: linear-gradient(180deg, #7038F8, #4924A1, #2A1461, #0A0428);
+    position: relative; /* Asegura que el pseudo-elemento se posicione relativamente a .bg-grass */
+    background: url("/dragon.gif");
+    background-size: cover;
+    object-fit: cover;
+    overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
+}
+
+.bg-dragon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Color negro con opacidad del 50% */
+    pointer-events: none; /* Permite que los eventos de clic pasen a los elementos hijos */
+    z-index: 1; /* Coloca el pseudo-elemento sobre la imagen de fondo */
+}
+
+/* Asegura que el contenido dentro de .bg-grass esté por encima del overlay */
+.bg-dragon > * {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(10px 10px 30px rgb(0, 255, 242)); 
 }
 
 /* Siniestro */
 .bg-dark {
-    background: linear-gradient(180deg, #705848, #503828, #2C1D14, #0A0805);
+    position: relative; /* Asegura que el pseudo-elemento se posicione relativamente a .bg-grass */
+    background: url("/dark.gif");
+    background-size: cover;
+    object-fit: cover;
+    overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
 }
 
+.bg-dark::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Color negro con opacidad del 50% */
+    pointer-events: none; /* Permite que los eventos de clic pasen a los elementos hijos */
+    z-index: 1; /* Coloca el pseudo-elemento sobre la imagen de fondo */
+}
+
+/* Asegura que el contenido dentro de .bg-grass esté por encima del overlay */
+.bg-dark > * {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(10px 10px 30px rgb(0, 0, 0)); 
+}
 /* Acero */
 .bg-steel {
-    background: linear-gradient(180deg, #B8B8D0, #8484B0, #4D4D70, #1A1A2A);
+    position: relative; /* Asegura que el pseudo-elemento se posicione relativamente a .bg-grass */
+    background: url("/steel.gif");
+    background-size: cover;
+    object-fit: cover;
+    overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
+}
+
+.bg-steel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Color negro con opacidad del 50% */
+    pointer-events: none; /* Permite que los eventos de clic pasen a los elementos hijos */
+    z-index: 1; /* Coloca el pseudo-elemento sobre la imagen de fondo */
+}
+
+/* Asegura que el contenido dentro de .bg-grass esté por encima del overlay */
+.bg-steel > * {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(10px 10px 30px rgb(209, 209, 209)); 
 }
 
 /* Hada */
 .bg-fairy {
-    background: linear-gradient(180deg, #EE99AC, #D18392, #8B4D5E, #330F1A);
+    position: relative; /* Asegura que el pseudo-elemento se posicione relativamente a .bg-grass */
+    background: url("/fairy.gif");
+    background-size: cover;
+    object-fit: cover;
+    overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
+}
+
+.bg-fairy::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Color negro con opacidad del 50% */
+    pointer-events: none; /* Permite que los eventos de clic pasen a los elementos hijos */
+    z-index: 1; /* Coloca el pseudo-elemento sobre la imagen de fondo */
+}
+
+/* Asegura que el contenido dentro de .bg-grass esté por encima del overlay */
+.bg-fairy > * {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(10px 10px 30px rgb(253, 107, 234)); 
 }
