@@ -2,6 +2,7 @@
     height: 100vh;
     display: grid;
     grid-template-rows: 2.5fr 1fr 1.5fr 0.5fr;
+    
 
   .image-container {
     width: 100%;

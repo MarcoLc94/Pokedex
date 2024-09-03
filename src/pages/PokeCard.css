@@ -9,13 +9,15 @@
   margin: 10px;
   min-height: 520px;
   position: relative;
-  aspect-ratio: 1.8;
-  border-radius: 7px 7px 7px 7px;
+  aspect-ratio: 1.5;
+  border-radius: 10px 10px 10px 10px;
+  
 
   .img-background {
     width: 100%;
     height: 80%;
     background-color: gray;
+    border-radius: 10px 10px 10px 10px;
   }
 
   p {
@@ -672,4 +674,402 @@
     position: relative;
     z-index: 2;
     filter: drop-shadow(10px 10px 30px rgb(253, 107, 234)); 
+}
+
+/* Tipo Grass */
+.border-grass {
+    border: 8px solid #228B22; /* Verde oscuro */
+    background: linear-gradient(to bottom, #A2CFA5, #8CCB8F, #6B8B5F, #2D3A24); /* Degradado verde oscuro a negro */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Tipo Fire */
+.border-fire {
+    border: 8px solid #FF4500; /* Rojo anaranjado brillante */
+    background: linear-gradient(to bottom, #FF6347, #FF7F50, #FF4500, #4B0000); /* Degradado rojo oscuro a negro */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Tipo Water */
+.border-water {
+    border: 8px solid #1E90FF; /* Azul brillante */
+    background: linear-gradient(to bottom, #87CEFA, #4682B4, #1E90FF, #003366); /* Degradado azul claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Tipo Electric */
+.border-electric {
+    border: 8px solid #FFD700; /* Dorado brillante */
+    background: linear-gradient(to bottom, #FFFFE0, #FFFF00, #FFD700, #4B4B4B); /* Degradado amarillo claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Tipo Rock */
+.border-rock {
+    border: 8px solid #808080; /* Gris neutro */
+    background: linear-gradient(to bottom, #D3D3D3, #A9A9A9, #808080, #2F4F4F); /* Degradado gris claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Tipo Psychic */
+.border-psychic {
+    border: 8px solid #DA70D6; /* Rosa púrpura brillante */
+    background: linear-gradient(to bottom, #E6AEE6, #DA70D6, #8B008B, #3A0A3A); /* Degradado rosa claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Tipo Ice */
+.border-ice {
+    border: 8px solid #00CED1; /* Cian oscuro */
+    background: linear-gradient(to bottom, #E0FFFF, #00FFFF, #00CED1, #004D4D); /* Degradado cian claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Tipo Dragon */
+.border-dragon {
+    border: 8px solid #4B0082; /* Índigo oscuro */
+    background: linear-gradient(to bottom, #6A5ACD, #4B0082, #2E0854, #000000); /* Degradado índigo claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Tipo Dark */
+.border-dark {
+    border: 8px solid #000000; /* Negro puro */
+    background: linear-gradient(to bottom, #2F4F4F, #000000, #101010, #000000); /* Degradado gris oscuro a negro puro */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Tipo Fairy */
+.border-fairy {
+    border: 8px solid #FF69B4; /* Rosa brillante */
+    background: linear-gradient(to bottom, #FFB6C1, #FF69B4, #FF1493, #6B002B); /* Degradado rosa claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Tipo Normal */
+.border-normal {
+    border: 8px solid #C0C0C0; /* Plateado */
+    background: linear-gradient(to bottom, #F5F5F5, #C0C0C0, #A9A9A9, #404040); /* Degradado gris claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Tipo Fighting */
+.border-fighting {
+    border: 8px solid #C04000; /* Marrón rojizo */
+    background: linear-gradient(to bottom, #F4A460, #C04000, #8B4513, #3B1F1F); /* Degradado marrón claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Tipo Flying */
+.border-flying {
+    border: 8px solid #87CEEB; /* Azul cielo */
+    background: linear-gradient(to bottom, #B0E0E6, #87CEEB, #4682B4, #003366); /* Degradado azul claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Tipo Poison */
+.border-poison {
+    border: 8px solid #9932CC; /* Púrpura oscuro */
+    background: linear-gradient(to bottom, #DDA0DD, #9932CC, #8B008B, #2D0042); /* Degradado púrpura claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Tipo Ground */
+.border-ground {
+    border: 8px solid #DEB887; /* Marrón claro */
+    background: linear-gradient(to bottom, #F5DEB3, #DEB887, #D2B48C, #3B2A1F); /* Degradado marrón claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Tipo Bug */
+.border-bug {
+    border: 8px solid #A8B820; /* Verde oliva */
+    background: linear-gradient(to bottom, #C0D9A8, #A8B820, #6B8E23, #2F4F2F); /* Degradado verde claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Tipo Ghost */
+.border-ghost {
+    border: 8px solid #483D8B; /* Púrpura oscuro */
+    background: linear-gradient(to bottom, #6A5ACD, #483D8B, #2E0854, #1C1C1C); /* Degradado púrpura claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Tipo Steel */
+.border-steel {
+    border: 8px solid #708090; /* Azul acero */
+    background: linear-gradient(to bottom, #B0C4DE, #708090, #2F4F4F, #1C1C1C); /* Degradado azul claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+/* Tipo Grass */
+.text-color-grass {
+    color: #2D3A24; /* Verde más oscuro para resaltar sobre el fondo verde claro */
+}
+
+/* Tipo Fire */
+.text-color-fire {
+    color: #4B0000; /* Rojo oscuro para resaltar sobre el fondo rojo claro */
+}
+
+/* Tipo Water */
+.text-color-water {
+    color: #003366; /* Azul oscuro para resaltar sobre el fondo azul claro */
+}
+
+/* Tipo Electric */
+.text-color-electric {
+    color: #000000; /* Negro para resaltar sobre el fondo amarillo claro */
+}
+
+/* Tipo Psychic */
+.text-color-psychic {
+    color: #3A0A3A; /* Púrpura oscuro para resaltar sobre el fondo rosa claro */
+}
+
+/* Tipo Bug */
+.text-color-bug {
+    color: #2F4F2F; /* Verde oscuro para resaltar sobre el fondo verde claro */
+}
+
+/* Tipo Rock */
+.text-color-rock {
+    color: #404040; /* Gris oscuro para resaltar sobre el fondo gris claro */
+}
+
+/* Tipo Ground */
+.text-color-ground {
+    color: #3B2A1F; /* Marrón oscuro para resaltar sobre el fondo marrón claro */
+}
+
+/* Tipo Ice */
+.text-color-ice {
+    color: #004D4D; /* Verde azulado oscuro para resaltar sobre el fondo cian claro */
+}
+
+/* Tipo Dragon */
+.text-color-dragon {
+    color: #000000; /* Negro para resaltar sobre el fondo púrpura claro */
+}
+
+/* Tipo Fairy */
+.text-color-fairy {
+    color: #6B002B; /* Rosa oscuro para resaltar sobre el fondo rosa claro */
+}
+
+/* Estilos base para los botones */
+.button-base {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+/* Tipo Normal */
+.button-normal {
+    background-color: #C0C0C0; /* Gris claro */
+    color: #000000; /* Negro */
+}
+.button-normal:hover {
+    background-color: #D3D3D3; /* Gris más claro */
+    color: #000000; /* Negro */
+    transform: scale(1.1);
+}
+
+/* Tipo Fire */
+.button-fire {
+    background-color: #FF6347; /* Rojo anaranjado */
+    color: #FFFFFF; /* Blanco */
+}
+.button-fire:hover {
+    background-color: #FF7F50; /* Rojo coral */
+    color: #FFFFFF; /* Blanco */
+    transform: scale(1.1);
+}
+
+/* Tipo Water */
+.button-water {
+    background-color: #1E90FF; /* Azul */
+    color: #FFFFFF; /* Blanco */
+}
+.button-water:hover {
+    background-color: #4682B4; /* Azul acero */
+    color: #FFFFFF; /* Blanco */
+    transform: scale(1.1);
+}
+
+/* Tipo Electric */
+.button-electric {
+    background-color: #FFD700; /* Amarillo dorado */
+    color: #000000; /* Negro */
+}
+.button-electric:hover {
+    background-color: #FFFFE0; /* Amarillo claro */
+    color: #000000; /* Negro */
+    transform: scale(1.1);
+}
+
+/* Tipo Grass */
+.button-grass {
+    background-color: #228B22; /* Verde oscuro */
+    color: #FFFFFF; /* Blanco */
+}
+.button-grass:hover {
+    background-color: #2E8B57; /* Verde mar */
+    color: #FFFFFF; /* Blanco */
+    transform: scale(1.1);
+}
+
+/* Tipo Ice */
+.button-ice {
+    background-color: #00FFFF; /* Cian */
+    color: #000000; /* Negro */
+}
+.button-ice:hover {
+    background-color: #E0FFFF; /* Cian claro */
+    color: #000000; /* Negro */
+    transform: scale(1.1);
+}
+
+/* Tipo Fighting */
+.button-fighting {
+    background-color: #C04000; /* Marrón rojizo */
+    color: #FFFFFF; /* Blanco */
+}
+.button-fighting:hover {
+    background-color: #F4A460; /* Arena */
+    color: #FFFFFF; /* Blanco */
+    transform: scale(1.1);
+}
+
+/* Tipo Poison */
+.button-poison {
+    background-color: #9932CC; /* Púrpura oscuro */
+    color: #FFFFFF; /* Blanco */
+}
+.button-poison:hover {
+    background-color: #DDA0DD; /* Púrpura claro */
+    color: #FFFFFF; /* Blanco */
+    transform: scale(1.1);
+}
+
+/* Tipo Ground */
+.button-ground {
+    background-color: #DEB887; /* Marrón claro */
+    color: #000000; /* Negro */
+}
+.button-ground:hover {
+    background-color: #F5DEB3; /* Blanco de trigo */
+    color: #000000; /* Negro */
+    transform: scale(1.1);
+}
+
+/* Tipo Flying */
+.button-flying {
+    background-color: #87CEEB; /* Azul cielo */
+    color: #000000; /* Negro */
+}
+.button-flying:hover {
+    background-color: #B0E0E6; /* Azul claro */
+    color: #000000; /* Negro */
+    transform: scale(1.1);
+}
+
+/* Tipo Psychic */
+.button-psychic {
+    background-color: #DA70D6; /* Rosa púrpura */
+    color: #FFFFFF; /* Blanco */
+}
+.button-psychic:hover {
+    background-color: #E6AEE6; /* Rosa claro */
+    color: #FFFFFF; /* Blanco */
+    transform: scale(1.1);
+}
+
+/* Tipo Bug */
+.button-bug {
+    background-color: #A8B820; /* Verde oliva */
+    color: #FFFFFF; /* Blanco */
+}
+.button-bug:hover {
+    background-color: #C0D9A8; /* Verde claro */
+    color: #FFFFFF; /* Blanco */
+    transform: scale(1.1);
+}
+
+/* Tipo Rock */
+.button-rock {
+    background-color: #808080; /* Gris */
+    color: #FFFFFF; /* Blanco */
+}
+.button-rock:hover {
+    background-color: #A9A9A9; /* Gris oscuro */
+    color: #FFFFFF; /* Blanco */
+    transform: scale(1.1);
+}
+
+/* Tipo Dragon */
+.button-dragon {
+    background-color: #4B0082; /* Índigo oscuro */
+    color: #FFFFFF; /* Blanco */
+}
+.button-dragon:hover {
+    background-color: #6A5ACD; /* Azul pálido */
+    color: #FFFFFF; /* Blanco */
+    transform: scale(1.1);
+}
+
+/* Tipo Dark */
+.button-dark {
+    background-color: #000000; /* Negro */
+    color: #FFFFFF; /* Blanco */
+}
+.button-dark:hover {
+    background-color: #2F4F4F; /* Gris oscuro */
+    color: #FFFFFF; /* Blanco */
+    transform: scale(1.1);
+}
+
+/* Tipo Fairy */
+.button-fairy {
+    background-color: #FF69B4; /* Rosa brillante */
+    color: #000000; /* Negro */
+}
+.button-fairy:hover {
+    background-color: #FFB6C1; /* Rosa claro */
+    color: #000000; /* Negro */
+    transform: scale(1.1);
+}
+
+/* Tipo Steel */
+.button-steel {
+    background-color: #708090; /* Azul acero */
+    color: #FFFFFF; /* Blanco */
+}
+.button-steel:hover {
+    background-color: #B0C4DE; /* Azul pálido */
+    color: #FFFFFF; /* Blanco */
+    transform: scale(1.1);
 }

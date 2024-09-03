@@ -46,7 +46,7 @@ const PokeCard = ({ pokemon }) => {
 
   return (
     <div>
-      <div className="card-container-inside">
+      <div className={`card-container-inside border-${pokeInfo?.types[0].type.name}`} >
         <div className={`img-background bg-${pokeInfo?.types[0].type.name}`}>
           {isLoading ? 
             (<div className="pokeball-loader"></div>) :
@@ -66,7 +66,7 @@ const PokeCard = ({ pokemon }) => {
           }
         </div>
         <div className="card-info-inside">
-          <h2>{pokeInfo?.name}</h2>
+          <h2 className={`text-color-${pokeInfo?.types[0].type.name}`}>{pokeInfo?.name}</h2>
           <p>Type</p>
           <div className="types-poke">
             {isLoading ? (<div className="loader"></div>) :
@@ -86,9 +86,9 @@ const PokeCard = ({ pokemon }) => {
           )))}
         </div>
         <div className="button-card-cry">
-          <button onClick={handleShiny}>{isShiny ? "Default" : "Shiny"}</button>
-          <button onClick={handleSound}>Cry</button>
-          <a onClick={handleTurn}>
+          <button className={`button-base button-${pokeInfo?.types[0].type.name}`} onClick={handleShiny}>{isShiny ? "Default" : "Shiny"}</button>
+          <button className={`button-base button-${pokeInfo?.types[0].type.name}`} onClick={handleSound}>Cry</button>
+          <a onClick={handleTurn} className={`button-base`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="1em"
