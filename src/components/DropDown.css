@@ -2,7 +2,7 @@
     width: 30vw;
     display: flex;
     align-items: center;
-    
+    z-index: 100;
 
     span {
         color: rgb(221, 33, 33);

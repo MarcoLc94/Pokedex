@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import PokemonTypeDropdown from "../components/DropDown";
 import "./Pokedex.css";
 import useFetch from "../hooks/useFetch";
@@ -6,20 +6,38 @@ import PokeCard from "./PokeCard";
 import { useNavigate } from "react-router-dom";
 
 const Pokedex = ({ name }) => {
-  const [pokemons, getPokemons] = useFetch();
+  const [pokemons, getPokemons, getPokemonByName, error] = useFetch();
+  const [searchName, setSearchName] = useState("");
+  const inputName = useRef();
 
   const navigate = useNavigate();
-
+ 
   useEffect(() => {
     const url = "https://pokeapi.co/api/v2/pokemon?limit=150&offset=0";
-    getPokemons(url) 
-  }, []);
+    if (!searchName) {
+      getPokemons(url);
+    }
+  }, [searchName]);
 
-  console.log(pokemons);
+  useEffect(() => {
+    if (searchName) {
+      const url = `https://pokeapi.co/api/v2/pokemon/${searchName.toLowerCase()}`;
+      getPokemonByName(url, searchName);
+      console.log(url, searchName)
+    }
+  }, [searchName]);
+
+  const handleSearch = () => {
+    setSearchName(inputName.current.value);
+  };
 
   const handleHome = () => {
     navigate("/");
   };
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
   return (
     <div>
@@ -44,24 +62,26 @@ const Pokedex = ({ name }) => {
               <span className="text-red">
                 Bienvenido {name ? name : "Anonymous"}
               </span>
-              , aqui podrás encontrar a tu pokémon favorito.
+              , aquí podrás encontrar a tu Pokémon favorito.
             </h2>
           </div>
         </footer>
       </div>
       <div className="card-container">
         <div className="input-container">
-          <input type="text" placeholder="Buscar un pokémon" />
-          <button>Buscar</button>
+          <input ref={inputName} type="text" placeholder="Buscar un Pokémon" />
+          <button onClick={handleSearch}>Buscar</button>
         </div>
         <PokemonTypeDropdown />
       </div>
       <div className="info-container">
-        {
+        {searchName && !error ? (
+          <PokeCard pokemons={pokemons} searchName={searchName}/>
+        ) : (
           pokemons?.results.map((pokemon) => (
             <PokeCard key={pokemon.name} pokemon={pokemon} />
           ))
-        }
+        )}
       </div>
     </div>
   );
