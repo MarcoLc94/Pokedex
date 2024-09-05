@@ -6,24 +6,19 @@
     color: rgb(219, 0, 0);
 
     svg {
-        width: 20vw;
-        height: 4vh;
-        margin: 15px;
-        
+      width: 20vw;
+      height: 4vh;
+      margin: 15px;
     }
 
     svg:hover {
-        transform: scale(1.1);
-        cursor: pointer;
-      }
+      transform: scale(1.1);
+      cursor: pointer;
+    }
   }
-
- 
-
 
   .footer-container {
     footer {
-     
       .red-color {
         width: 100%;
         height: 40px;
@@ -117,7 +112,7 @@
       align-items: center;
 
       img {
-        min-width: 20vw;
+        min-width: 10vw;
         padding: 20px;
       }
 
@@ -125,7 +120,7 @@
         p {
           text-align: center;
           padding: 10px;
-          border: 1px solid gray;
+          font-weight: 500;
         }
 
         h2 {
@@ -154,20 +149,375 @@
       }
 
       .stats-container-detail {
-        height: 30vh;
-        padding: 10px;
+        height: auto;
+        width: 80%;
+        padding: 20px;
+        text-align: center;
+        margin: 10px;
+
+        .stat-area {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          width: 100%;
+          justify-content: center;
+          padding: 10px;
+
+          
+
+          /* Estilos generales para las barras de estadísticas */
+          .stat-bar {
+            height: 20px; /* Ajusta la altura según sea necesario */
+            background-color: #4caf50; /* Color de fondo de la barra */
+            border-radius: 5px; /* Bordes redondeados opcional */
+            margin: 5px 0; /* Espacio entre las barras */
+            color: white; /* Color del texto dentro de la barra */
+            text-align: center; /* Alineación del texto al centro */
+            line-height: 20px; /* Alineación vertical del texto */
+          }
+
+          /* Clases para diferentes anchos de barra */
+          .stat-bar-01 {
+            width: 1%;
+          }
+          .stat-bar-02 {
+            width: 2%;
+          }
+          .stat-bar-03 {
+            width: 3%;
+          }
+          .stat-bar-04 {
+            width: 4%;
+          }
+          .stat-bar-05 {
+            width: 5%;
+          }
+          .stat-bar-06 {
+            width: 6%;
+          }
+          .stat-bar-07 {
+            width: 7%;
+          }
+          .stat-bar-08 {
+            width: 8%;
+          }
+          .stat-bar-09 {
+            width: 9%;
+          }
+          .stat-bar-10 {
+            width: 10%;
+          }
+          .stat-bar-11 {
+            width: 11%;
+          }
+          .stat-bar-12 {
+            width: 12%;
+          }
+          .stat-bar-13 {
+            width: 13%;
+          }
+          .stat-bar-14 {
+            width: 14%;
+          }
+          .stat-bar-15 {
+            width: 15%;
+          }
+          .stat-bar-16 {
+            width: 16%;
+          }
+          .stat-bar-17 {
+            width: 17%;
+          }
+          .stat-bar-18 {
+            width: 18%;
+          }
+          .stat-bar-19 {
+            width: 19%;
+          }
+          .stat-bar-20 {
+            width: 20%;
+          }
+          .stat-bar-21 {
+            width: 21%;
+          }
+          .stat-bar-22 {
+            width: 22%;
+          }
+          .stat-bar-23 {
+            width: 23%;
+          }
+          .stat-bar-24 {
+            width: 24%;
+          }
+          .stat-bar-25 {
+            width: 25%;
+          }
+          .stat-bar-26 {
+            width: 26%;
+          }
+          .stat-bar-27 {
+            width: 27%;
+          }
+          .stat-bar-28 {
+            width: 28%;
+          }
+          .stat-bar-29 {
+            width: 29%;
+          }
+          .stat-bar-30 {
+            width: 30%;
+          }
+          .stat-bar-31 {
+            width: 31%;
+          }
+          .stat-bar-32 {
+            width: 32%;
+          }
+          .stat-bar-33 {
+            width: 33%;
+          }
+          .stat-bar-34 {
+            width: 34%;
+          }
+          .stat-bar-35 {
+            width: 35%;
+          }
+          .stat-bar-36 {
+            width: 36%;
+          }
+          .stat-bar-37 {
+            width: 37%;
+          }
+          .stat-bar-38 {
+            width: 38%;
+          }
+          .stat-bar-39 {
+            width: 39%;
+          }
+          .stat-bar-40 {
+            width: 40%;
+          }
+          .stat-bar-41 {
+            width: 41%;
+          }
+          .stat-bar-42 {
+            width: 42%;
+          }
+          .stat-bar-43 {
+            width: 43%;
+          }
+          .stat-bar-44 {
+            width: 44%;
+          }
+          .stat-bar-45 {
+            width: 45%;
+          }
+          .stat-bar-46 {
+            width: 46%;
+          }
+          .stat-bar-47 {
+            width: 47%;
+          }
+          .stat-bar-48 {
+            width: 48%;
+          }
+          .stat-bar-49 {
+            width: 49%;
+          }
+          .stat-bar-50 {
+            width: 50%;
+          }
+          .stat-bar-51 {
+            width: 51%;
+          }
+          .stat-bar-52 {
+            width: 52%;
+          }
+          .stat-bar-53 {
+            width: 53%;
+          }
+          .stat-bar-54 {
+            width: 54%;
+          }
+          .stat-bar-55 {
+            width: 55%;
+          }
+          .stat-bar-56 {
+            width: 56%;
+          }
+          .stat-bar-57 {
+            width: 57%;
+          }
+          .stat-bar-58 {
+            width: 58%;
+          }
+          .stat-bar-59 {
+            width: 59%;
+          }
+          .stat-bar-60 {
+            width: 60%;
+          }
+          .stat-bar-61 {
+            width: 61%;
+          }
+          .stat-bar-62 {
+            width: 62%;
+          }
+          .stat-bar-63 {
+            width: 63%;
+          }
+          .stat-bar-64 {
+            width: 64%;
+          }
+          .stat-bar-65 {
+            width: 65%;
+          }
+          .stat-bar-66 {
+            width: 66%;
+          }
+          .stat-bar-67 {
+            width: 67%;
+          }
+          .stat-bar-68 {
+            width: 68%;
+          }
+          .stat-bar-69 {
+            width: 69%;
+          }
+          .stat-bar-70 {
+            width: 70%;
+          }
+          .stat-bar-71 {
+            width: 71%;
+          }
+          .stat-bar-72 {
+            width: 72%;
+          }
+          .stat-bar-73 {
+            width: 73%;
+          }
+          .stat-bar-74 {
+            width: 74%;
+          }
+          .stat-bar-75 {
+            width: 75%;
+          }
+          .stat-bar-76 {
+            width: 76%;
+          }
+          .stat-bar-77 {
+            width: 77%;
+          }
+          .stat-bar-78 {
+            width: 78%;
+          }
+          .stat-bar-79 {
+            width: 79%;
+          }
+          .stat-bar-80 {
+            width: 80%;
+          }
+          .stat-bar-81 {
+            width: 81%;
+          }
+          .stat-bar-82 {
+            width: 82%;
+          }
+          .stat-bar-83 {
+            width: 83%;
+          }
+          .stat-bar-84 {
+            width: 84%;
+          }
+          .stat-bar-85 {
+            width: 85%;
+          }
+          .stat-bar-86 {
+            width: 86%;
+          }
+          .stat-bar-87 {
+            width: 87%;
+          }
+          .stat-bar-88 {
+            width: 88%;
+          }
+          .stat-bar-89 {
+            width: 89%;
+          }
+          .stat-bar-90 {
+            width: 90%;
+          }
+          .stat-bar-91 {
+            width: 91%;
+          }
+          .stat-bar-92 {
+            width: 92%;
+          }
+          .stat-bar-93 {
+            width: 93%;
+          }
+          .stat-bar-94 {
+            width: 94%;
+          }
+          .stat-bar-95 {
+            width: 95%;
+          }
+          .stat-bar-96 {
+            width: 96%;
+          }
+          .stat-bar-97 {
+            width: 97%;
+          }
+          .stat-bar-98 {
+            width: 98%;
+          }
+          .stat-bar-99 {
+            width: 99%;
+          }
+          .stat-bar-100 {
+            width: 100%;
+          }
+        }
       }
     }
 
     .card-two-container {
-      height: 50vh;
+      height: auto;
       background-color: gray;
       margin: 10px;
       width: 81%;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+
+      gap: 10px;
 
       h2 {
         margin: 10px;
+      }
+
+      
+      .moves-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        height: 100%;
+        padding: 20px;
+        gap: 10px;
+
+        span {
+          border: 5px solid beige;
+          border-radius: 10px 10px 10px 10px;
+          background-color: beige;
+          padding: 10px;
+          font-weight: 700;
+          text-transform: capitalize;
+        }
+
+        span:hover {
+          transform: scale(1.1);
+          filter: drop-shadow(0px 0px 10px white);
+        } 
       }
     }
   }
@@ -181,9 +531,9 @@
     animation: spin 1s linear infinite;
     box-shadow: inset -2px 0 0 2px black;
   }
-  
+
   .pokeball-loader::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 0;
@@ -192,9 +542,9 @@
     background: black;
     transform: translateY(-50%);
   }
-  
+
   .pokeball-loader::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -207,248 +557,352 @@
   }
   @keyframes spin {
     0% {
-        transform: rotate(0deg); /* Comienza en 0 grados */
+      transform: rotate(0deg); /* Comienza en 0 grados */
     }
     100% {
-        transform: rotate(360deg); /* Gira hasta 360 grados */
+      transform: rotate(360deg); /* Gira hasta 360 grados */
     }
   }
 
+  /* Tipo Grass */
+  .backg-grass {
+    border: 8px solid #228b22; /* Verde oscuro */
+    background: linear-gradient(
+      to bottom,
+      #a2cfa5,
+      #8ccb8f,
+      #6b8b5f,
+      #2d3a24
+    ); /* Degradado verde claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  /* Tipo Fire */
+  .backg-fire {
+    border: 8px solid #ff6347; /* Rojo anaranjado */
+    background: linear-gradient(
+      to bottom,
+      #ff6f61,
+      #ff7f50,
+      #ff6347,
+      #4b0000
+    ); /* Degradado rojo claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  /* Tipo Water */
+  .backg-water {
+    border: 8px solid #1e90ff; /* Azul */
+    background: linear-gradient(
+      to bottom,
+      #87cefa,
+      #4682b4,
+      #1e90ff,
+      #003366
+    ); /* Degradado azul claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  /* Tipo Electric */
+  .backg-electric {
+    border: 8px solid #ffd700; /* Dorado */
+    background: linear-gradient(
+      to bottom,
+      #ffffe0,
+      #ffff00,
+      #ffd700,
+      #4b4b4b
+    ); /* Degradado amarillo claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  /* Tipo Rock */
+  .backg-rock {
+    border: 8px solid #808080; /* Gris */
+    background: linear-gradient(
+      to bottom,
+      #d3d3d3,
+      #a9a9a9,
+      #808080,
+      #2f4f4f
+    ); /* Degradado gris claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  /* Tipo Psychic */
+  .backg-psychic {
+    border: 8px solid #da70d6; /* Rosa púrpura */
+    background: linear-gradient(
+      to bottom,
+      #e6aee6,
+      #da70d6,
+      #8b008b,
+      #3a0a3a
+    ); /* Degradado rosa claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  /* Tipo Ice */
+  .backg-ice {
+    border: 8px solid #00ffff; /* Cian */
+    background: linear-gradient(
+      to bottom,
+      #e0ffff,
+      #00ffff,
+      #00ced1,
+      #004d4d
+    ); /* Degradado cian claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  /* Tipo Dragon */
+  .backg-dragon {
+    border: 8px solid #4b0082; /* Índigo oscuro */
+    background: linear-gradient(
+      to bottom,
+      #6a5acd,
+      #4b0082,
+      #2e0854,
+      #000000
+    ); /* Degradado índigo claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  /* Tipo Dark */
+  .backg-dark {
+    border: 8px solid #000000; /* Negro */
+    background: linear-gradient(
+      to bottom,
+      #2f4f4f,
+      #000000,
+      #101010,
+      #000000
+    ); /* Degradado gris oscuro a negro puro */
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  /* Tipo Fairy */
+  .backg-fairy {
+    border: 8px solid #ff69b4; /* Rosa brillante */
+    background: linear-gradient(
+      to bottom,
+      #ffb6c1,
+      #ff69b4,
+      #ff1493,
+      #6b002b
+    ); /* Degradado rosa claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  /* Tipo Normal */
+  .backg-normal {
+    border: 8px solid #c0c0c0; /* Plateado */
+    background: linear-gradient(
+      to bottom,
+      #f5f5f5,
+      #c0c0c0,
+      #a9a9a9,
+      #404040
+    ); /* Degradado gris claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  /* Tipo Fighting */
+  .backg-fighting {
+    border: 8px solid #c04000; /* Marrón rojizo */
+    background: linear-gradient(
+      to bottom,
+      #f4a460,
+      #c04000,
+      #8b4513,
+      #3b1f1f
+    ); /* Degradado marrón claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  /* Tipo Flying */
+  .backg-flying {
+    border: 8px solid #87ceeb; /* Azul cielo */
+    background: linear-gradient(
+      to bottom,
+      #b0e0e6,
+      #87ceeb,
+      #4682b4,
+      #003366
+    ); /* Degradado azul claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  /* Tipo Poison */
+  .backg-poison {
+    border: 8px solid #9932cc; /* Púrpura oscuro */
+    background: linear-gradient(
+      to bottom,
+      #dda0dd,
+      #9932cc,
+      #8b008b,
+      #2d0042
+    ); /* Degradado púrpura claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  /* Tipo Ground */
+  .backg-ground {
+    border: 8px solid #deb887; /* Marrón claro */
+    background: linear-gradient(
+      to bottom,
+      #f5deb3,
+      #deb887,
+      #d2b48c,
+      #3b2a1f
+    ); /* Degradado marrón claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  /* Tipo Bug */
+  .backg-bug {
+    border: 8px solid #a8b820; /* Verde oliva */
+    background: linear-gradient(
+      to bottom,
+      #c0d9a8,
+      #a8b820,
+      #6b8e23,
+      #2f4f2f
+    ); /* Degradado verde claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  /* Tipo Ghost */
+  .backg-ghost {
+    border: 8px solid #483d8b; /* Púrpura oscuro */
+    background: linear-gradient(
+      to bottom,
+      #6a5acd,
+      #483d8b,
+      #2e0854,
+      #1c1c1c
+    ); /* Degradado púrpura claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  /* Tipo Steel */
+  .backg-steel {
+    border: 8px solid #708090; /* Azul acero */
+    background: linear-gradient(
+      to bottom,
+      #b0c4de,
+      #708090,
+      #2f4f4f,
+      #1c1c1c
+    ); /* Degradado azul claro a negro */
+    padding: 10px;
+    border-radius: 10px;
+  }
 
   /* Tipo Grass */
-.backg-grass {
-  border: 8px solid #228B22; /* Verde oscuro */
-  background: linear-gradient(to bottom, #A2CFA5, #8CCB8F, #6B8B5F, #2D3A24); /* Degradado verde claro a negro */
-  padding: 10px;
-  border-radius: 10px;
+  .shadow-grass {
+    filter: drop-shadow(0px 0px 8px #228b22); /* Sombra verde oscuro */
+  }
+
+  /* Tipo Fire */
+  .shadow-fire {
+    filter: drop-shadow(0px 0px 8px #ff6347); /* Sombra rojo anaranjado */
+  }
+
+  /* Tipo Water */
+  .shadow-water {
+    filter: drop-shadow(0px 0px 8px #1e90ff); /* Sombra azul */
+  }
+
+  /* Tipo Electric */
+  .shadow-electric {
+    filter: drop-shadow(0px 0px 8px #ffd700); /* Sombra dorado */
+  }
+
+  /* Tipo Rock */
+  .shadow-rock {
+    filter: drop-shadow(0px 0px 8px #808080); /* Sombra gris */
+  }
+
+  /* Tipo Psychic */
+  .shadow-psychic {
+    filter: drop-shadow(0px 0px 8px #da70d6); /* Sombra rosa púrpura */
+  }
+
+  /* Tipo Ice */
+  .shadow-ice {
+    filter: drop-shadow(0px 0px 8px #00ffff); /* Sombra cian */
+  }
+
+  /* Tipo Dragon */
+  .shadow-dragon {
+    filter: drop-shadow(0px 0px 8px #4b0082); /* Sombra índigo oscuro */
+  }
+
+  /* Tipo Dark */
+  .shadow-dark {
+    filter: drop-shadow(0px 0px 8px #000000); /* Sombra negra */
+  }
+
+  /* Tipo Fairy */
+  .shadow-fairy {
+    filter: drop-shadow(0px 0px 8px #ff69b4); /* Sombra rosa brillante */
+  }
+
+  /* Tipo Normal */
+  .shadow-normal {
+    filter: drop-shadow(0px 0px 8px #c0c0c0); /* Sombra plateado */
+  }
+
+  /* Tipo Fighting */
+  .shadow-fighting {
+    filter: drop-shadow(0px 0px 8px #c04000); /* Sombra marrón rojizo */
+  }
+
+  /* Tipo Flying */
+  .shadow-flying {
+    filter: drop-shadow(0px 0px 8px #87ceeb); /* Sombra azul cielo */
+  }
+
+  /* Tipo Poison */
+  .shadow-poison {
+    filter: drop-shadow(0px 0px 8px #9932cc); /* Sombra púrpura oscuro */
+  }
+
+  /* Tipo Ground */
+  .shadow-ground {
+    filter: drop-shadow(0px 0px 8px #deb887); /* Sombra marrón claro */
+  }
+
+  /* Tipo Bug */
+  .shadow-bug {
+    filter: drop-shadow(0px 0px 8px #a8b820); /* Sombra verde oliva */
+  }
+
+  /* Tipo Ghost */
+  .shadow-ghost {
+    filter: drop-shadow(0px 0px 8px #483d8b); /* Sombra púrpura oscuro */
+  }
+
+  /* Tipo Steel */
+  .shadow-steel {
+    filter: drop-shadow(0px 0px 8px #708090); /* Sombra azul acero */
+  }
 }
-
-/* Tipo Fire */
-.backg-fire {
-  border: 8px solid #FF6347; /* Rojo anaranjado */
-  background: linear-gradient(to bottom, #FF6F61, #FF7F50, #FF6347, #4B0000); /* Degradado rojo claro a negro */
-  padding: 10px;
-  border-radius: 10px;
-}
-
-/* Tipo Water */
-.backg-water {
-  border: 8px solid #1E90FF; /* Azul */
-  background: linear-gradient(to bottom, #87CEFA, #4682B4, #1E90FF, #003366); /* Degradado azul claro a negro */
-  padding: 10px;
-  border-radius: 10px;
-}
-
-/* Tipo Electric */
-.backg-electric {
-  border: 8px solid #FFD700; /* Dorado */
-  background: linear-gradient(to bottom, #FFFFE0, #FFFF00, #FFD700, #4B4B4B); /* Degradado amarillo claro a negro */
-  padding: 10px;
-  border-radius: 10px;
-}
-
-/* Tipo Rock */
-.backg-rock {
-  border: 8px solid #808080; /* Gris */
-  background: linear-gradient(to bottom, #D3D3D3, #A9A9A9, #808080, #2F4F4F); /* Degradado gris claro a negro */
-  padding: 10px;
-  border-radius: 10px;
-}
-
-/* Tipo Psychic */
-.backg-psychic {
-  border: 8px solid #DA70D6; /* Rosa púrpura */
-  background: linear-gradient(to bottom, #E6AEE6, #DA70D6, #8B008B, #3A0A3A); /* Degradado rosa claro a negro */
-  padding: 10px;
-  border-radius: 10px;
-}
-
-/* Tipo Ice */
-.backg-ice {
-  border: 8px solid #00FFFF; /* Cian */
-  background: linear-gradient(to bottom, #E0FFFF, #00FFFF, #00CED1, #004D4D); /* Degradado cian claro a negro */
-  padding: 10px;
-  border-radius: 10px;
-}
-
-/* Tipo Dragon */
-.backg-dragon {
-  border: 8px solid #4B0082; /* Índigo oscuro */
-  background: linear-gradient(to bottom, #6A5ACD, #4B0082, #2E0854, #000000); /* Degradado índigo claro a negro */
-  padding: 10px;
-  border-radius: 10px;
-}
-
-/* Tipo Dark */
-.backg-dark {
-  border: 8px solid #000000; /* Negro */
-  background: linear-gradient(to bottom, #2F4F4F, #000000, #101010, #000000); /* Degradado gris oscuro a negro puro */
-  padding: 10px;
-  border-radius: 10px;
-}
-
-/* Tipo Fairy */
-.backg-fairy {
-  border: 8px solid #FF69B4; /* Rosa brillante */
-  background: linear-gradient(to bottom, #FFB6C1, #FF69B4, #FF1493, #6B002B); /* Degradado rosa claro a negro */
-  padding: 10px;
-  border-radius: 10px;
-}
-
-/* Tipo Normal */
-.backg-normal {
-  border: 8px solid #C0C0C0; /* Plateado */
-  background: linear-gradient(to bottom, #F5F5F5, #C0C0C0, #A9A9A9, #404040); /* Degradado gris claro a negro */
-  padding: 10px;
-  border-radius: 10px;
-}
-
-/* Tipo Fighting */
-.backg-fighting {
-  border: 8px solid #C04000; /* Marrón rojizo */
-  background: linear-gradient(to bottom, #F4A460, #C04000, #8B4513, #3B1F1F); /* Degradado marrón claro a negro */
-  padding: 10px;
-  border-radius: 10px;
-}
-
-/* Tipo Flying */
-.backg-flying {
-  border: 8px solid #87CEEB; /* Azul cielo */
-  background: linear-gradient(to bottom, #B0E0E6, #87CEEB, #4682B4, #003366); /* Degradado azul claro a negro */
-  padding: 10px;
-  border-radius: 10px;
-}
-
-/* Tipo Poison */
-.backg-poison {
-  border: 8px solid #9932CC; /* Púrpura oscuro */
-  background: linear-gradient(to bottom, #DDA0DD, #9932CC, #8B008B, #2D0042); /* Degradado púrpura claro a negro */
-  padding: 10px;
-  border-radius: 10px;
-}
-
-/* Tipo Ground */
-.backg-ground {
-  border: 8px solid #DEB887; /* Marrón claro */
-  background: linear-gradient(to bottom, #F5DEB3, #DEB887, #D2B48C, #3B2A1F); /* Degradado marrón claro a negro */
-  padding: 10px;
-  border-radius: 10px;
-}
-
-/* Tipo Bug */
-.backg-bug {
-  border: 8px solid #A8B820; /* Verde oliva */
-  background: linear-gradient(to bottom, #C0D9A8, #A8B820, #6B8E23, #2F4F2F); /* Degradado verde claro a negro */
-  padding: 10px;
-  border-radius: 10px;
-}
-
-/* Tipo Ghost */
-.backg-ghost {
-  border: 8px solid #483D8B; /* Púrpura oscuro */
-  background: linear-gradient(to bottom, #6A5ACD, #483D8B, #2E0854, #1C1C1C); /* Degradado púrpura claro a negro */
-  padding: 10px;
-  border-radius: 10px;
-}
-
-/* Tipo Steel */
-.backg-steel {
-  border: 8px solid #708090; /* Azul acero */
-  background: linear-gradient(to bottom, #B0C4DE, #708090, #2F4F4F, #1C1C1C); /* Degradado azul claro a negro */
-  padding: 10px;
-  border-radius: 10px;
-}
-
-/* Tipo Grass */
-.shadow-grass {
-  filter: drop-shadow(0px 0px 8px #228B22); /* Sombra verde oscuro */
-}
-
-/* Tipo Fire */
-.shadow-fire {
-  filter: drop-shadow(0px 0px 8px #FF6347); /* Sombra rojo anaranjado */
-}
-
-/* Tipo Water */
-.shadow-water {
-  filter: drop-shadow(0px 0px 8px #1E90FF); /* Sombra azul */
-}
-
-/* Tipo Electric */
-.shadow-electric {
-  filter: drop-shadow(0px 0px 8px #FFD700); /* Sombra dorado */
-}
-
-/* Tipo Rock */
-.shadow-rock {
-  filter: drop-shadow(0px 0px 8px #808080); /* Sombra gris */
-}
-
-/* Tipo Psychic */
-.shadow-psychic {
-  filter: drop-shadow(0px 0px 8px #DA70D6); /* Sombra rosa púrpura */
-}
-
-/* Tipo Ice */
-.shadow-ice {
-  filter: drop-shadow(0px 0px 8px #00FFFF); /* Sombra cian */
-}
-
-/* Tipo Dragon */
-.shadow-dragon {
-  filter: drop-shadow(0px 0px 8px #4B0082); /* Sombra índigo oscuro */
-}
-
-/* Tipo Dark */
-.shadow-dark {
-  filter: drop-shadow(0px 0px 8px #000000); /* Sombra negra */
-}
-
-/* Tipo Fairy */
-.shadow-fairy {
-  filter: drop-shadow(0px 0px 8px #FF69B4); /* Sombra rosa brillante */
-}
-
-/* Tipo Normal */
-.shadow-normal {
-  filter: drop-shadow(0px 0px 8px #C0C0C0); /* Sombra plateado */
-}
-
-/* Tipo Fighting */
-.shadow-fighting {
-  filter: drop-shadow(0px 0px 8px #C04000); /* Sombra marrón rojizo */
-}
-
-/* Tipo Flying */
-.shadow-flying {
-  filter: drop-shadow(0px 0px 8px #87CEEB); /* Sombra azul cielo */
-}
-
-/* Tipo Poison */
-.shadow-poison {
-  filter: drop-shadow(0px 0px 8px #9932CC); /* Sombra púrpura oscuro */
-}
-
-/* Tipo Ground */
-.shadow-ground {
-  filter: drop-shadow(0px 0px 8px #DEB887); /* Sombra marrón claro */
-}
-
-/* Tipo Bug */
-.shadow-bug {
-  filter: drop-shadow(0px 0px 8px #A8B820); /* Sombra verde oliva */
-}
-
-/* Tipo Ghost */
-.shadow-ghost {
-  filter: drop-shadow(0px 0px 8px #483D8B); /* Sombra púrpura oscuro */
-}
-
-/* Tipo Steel */
-.shadow-steel {
-  filter: drop-shadow(0px 0px 8px #708090); /* Sombra azul acero */
-}
-
-
-}
-
