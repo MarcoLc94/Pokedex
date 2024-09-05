@@ -21,6 +21,7 @@ const useFetch = () => {
     return axios.get(url)
       .then((response) => {
         const result = response.data
+        console.log(response.data)
         if (result) {
           setResponse(result);
           console.log(result)

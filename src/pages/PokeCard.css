@@ -609,7 +609,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Color negro con opacidad del 50% */
+    background: rgba(19, 19, 19, 0.5); /* Color negro con opacidad del 50% */
     pointer-events: none; /* Permite que los eventos de clic pasen a los elementos hijos */
     z-index: 1; /* Coloca el pseudo-elemento sobre la imagen de fondo */
 }
@@ -618,7 +618,7 @@
 .bg-dark > * {
     position: relative;
     z-index: 2;
-    filter: drop-shadow(10px 10px 30px rgb(0, 0, 0)); 
+    filter: drop-shadow(10px 10px 30px rgb(126, 126, 126)); 
 }
 /* Acero */
 .bg-steel {
@@ -743,7 +743,7 @@
 /* Tipo Dark */
 .border-dark {
     border: 8px solid #000000; /* Negro puro */
-    background: linear-gradient(to bottom, #2F4F4F, #000000, #101010, #000000); /* Degradado gris oscuro a negro puro */
+    background: linear-gradient(to bottom, #2F4F4F, #4e4e4e, #2e2e2e, #313131); /* Degradado gris oscuro a negro puro */
     padding: 10px;
     border-radius: 10px;
 }
@@ -874,6 +874,11 @@
 /* Tipo Fairy */
 .text-color-fairy {
     color: #6B002B; /* Rosa oscuro para resaltar sobre el fondo rosa claro */
+}
+
+
+.text-color-dark {
+    color: #ffffff; /* Rosa oscuro para resaltar sobre el fondo rosa claro */
 }
 
 /* Estilos base para los botones */

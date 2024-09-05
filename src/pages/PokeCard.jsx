@@ -17,13 +17,13 @@ const PokeCard = ({ pokemon, pokemons, searchName }) => {
       getPokeInfo(pokemon.url).then(() => {
         setIsLoading(false); 
         console.log("entro aqui")
-        cry = new Audio(pokeInfo?.cries?.legacy);
+        cry = new Audio(pokemons?.cries?.legacy ? (pokemons?.cries?.legacy) : (pokemons?.cries?.latest));
       });
     } else {
       console.log("entro aca")
       setIsLoading(true);
       console.log(pokemons)
-      cry = new Audio(pokemons?.cries?.legacy);
+      cry = new Audio(pokemons?.cries?.legacy ? (pokemons?.cries?.legacy) : (pokemons?.cries?.latest));
       setIsLoading(false)
     }
   }, [pokemon, pokemons]);
@@ -49,21 +49,25 @@ const PokeCard = ({ pokemon, pokemons, searchName }) => {
 
   const pokeData = searchName ? pokemons : pokeInfo;
 
+  console.log(pokeData)
+
   return (
     <div>
-      <div className={`card-container-inside border-${pokeData?.types[0]?.type?.name}`} >
+      <div className={`card-container-inside border-${pokeData?.types[0].type.name}`} >
         <div className={`img-background bg-${pokeData?.types[0]?.type?.name}`}>
           {isLoading ? 
             (<div className="pokeball-loader"></div>) :
             (<img
               src={
+                pokeData?.sprites?.other?.showdown.front_default ? (
                 isTurnAround
                   ? isShiny
                     ? pokeData?.sprites?.other?.showdown?.back_shiny
                     : pokeData?.sprites?.other?.showdown?.back_default
                   : isShiny
                   ? pokeData?.sprites?.other?.showdown?.front_shiny
-                  : pokeData?.sprites?.other?.showdown?.front_default
+                  : pokeData?.sprites?.other?.showdown?.front_default) : isShiny ? (pokeData?.sprites?.other["official-artwork"].front_shiny)
+                  : (pokeData?.sprites?.other["official-artwork"].front_default)
               }
               alt={pokeData?.name}
               onClick={handleNavigate}

@@ -4,40 +4,56 @@ import "./Pokedex.css";
 import useFetch from "../hooks/useFetch";
 import PokeCard from "./PokeCard";
 import { useNavigate } from "react-router-dom";
+import pokemonTypeIds from "../utils/transformType";
 
 const Pokedex = ({ name }) => {
   const [pokemons, getPokemons, getPokemonByName, error] = useFetch();
   const [searchName, setSearchName] = useState("");
+  const [searchType, setSearchType] = useState("");
   const inputName = useRef();
+  const dropdownData = useRef();
 
   const navigate = useNavigate();
- 
+
   useEffect(() => {
     const url = "https://pokeapi.co/api/v2/pokemon?limit=150&offset=0";
     if (!searchName) {
       getPokemons(url);
     }
-  }, [searchName]);
+  }, []);
 
   useEffect(() => {
     if (searchName) {
-      const url = `https://pokeapi.co/api/v2/pokemon/${searchName.toLowerCase()}`;
+      const url = `https://pokeapi.co/api/v2/pokemon/${searchName}`;
       getPokemonByName(url, searchName);
-      console.log(url, searchName)
+      console.log(url, searchName);
     }
   }, [searchName]);
 
-  const handleSearch = () => {
-    setSearchName(inputName.current.value);
+  useEffect(() => {
+    if (searchType) {
+      const url = `https://pokeapi.co/api/v2/type/${searchType}`;
+      getPokemons(url);
+    }
+  }, [searchType]);
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    const poke = inputName.current.value;
+    setSearchName(poke);
   };
 
   const handleHome = () => {
     navigate("/");
   };
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
+  const handleSelect = (selectedOption) => {
+    if (selectedOption) {
+      const typeId = pokemonTypeIds[selectedOption.value];
+      setSearchType(typeId);
+      console.log(typeId); // Aquí se imprime el ID del tipo
+    }
+  };
 
   return (
     <div>
@@ -72,15 +88,21 @@ const Pokedex = ({ name }) => {
           <input ref={inputName} type="text" placeholder="Buscar un Pokémon" />
           <button onClick={handleSearch}>Buscar</button>
         </div>
-        <PokemonTypeDropdown />
+        <PokemonTypeDropdown ref={dropdownData} onChange={handleSelect} />
       </div>
       <div className="info-container">
-        {searchName && !error ? (
-          <PokeCard pokemons={pokemons} searchName={searchName}/>
-        ) : (
-          pokemons?.results.map((pokemon) => (
+        {searchType && pokemons?.pokemon ? (
+          pokemons.pokemon.map(({ pokemon }) => (
             <PokeCard key={pokemon.name} pokemon={pokemon} />
           ))
+        ) : searchName && pokemons && !error ? (
+          <PokeCard pokemons={pokemons} searchName={searchName} />
+        ) : pokemons?.results ? (
+          pokemons.results.map((pokemon) => (
+            <PokeCard key={pokemon.name} pokemon={pokemon} />
+          ))
+        ) : (
+          <p>No se encontraron Pokémon. Intenta nuevamente.</p>
         )}
       </div>
     </div>

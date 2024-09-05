@@ -23,7 +23,7 @@ const pokemonTypes = [
   { value: "fairy", label: "Hada" },
 ];
 
-const PokemonTypeDropdown = () => {
+const PokemonTypeDropdown = ({ onChange }) => {
   return (
     <div
       className="dropdown"
@@ -33,10 +33,11 @@ const PokemonTypeDropdown = () => {
       <Select
         id="pokemon-types"
         options={pokemonTypes}
+        onChange={onChange} // Llama a la función onChange cuando se selecciona una opción
         styles={{
           control: (provided) => ({
             ...provided,
-            width: "150",
+            width: "150px",
             padding: "3px",
             border: "1px solid #ccc",
             borderRadius: "4px",
