@@ -14,16 +14,18 @@ const PokeCard = ({ pokemon, pokemons, searchName }) => {
   useEffect(() => {
     if (!searchName) {
       setIsLoading(true); 
+      console.log(pokemon.url)
       getPokeInfo(pokemon.url).then(() => {
         setIsLoading(false); 
+        console.log(pokeInfo)
         console.log("entro aqui")
-        cry = new Audio(pokemons?.cries?.legacy ? (pokemons?.cries?.legacy) : (pokemons?.cries?.latest));
+        cry = new Audio(pokeInfo?.cries?.legacy);
       });
     } else {
       console.log("entro aca")
       setIsLoading(true);
       console.log(pokemons)
-      cry = new Audio(pokemons?.cries?.legacy ? (pokemons?.cries?.legacy) : (pokemons?.cries?.latest));
+      cry = new Audio(pokeInfo?.cries?.legacy);
       setIsLoading(false)
     }
   }, [pokemon, pokemons]);
@@ -35,6 +37,12 @@ const PokeCard = ({ pokemon, pokemons, searchName }) => {
 
   const handleSound = (event) => {
     event.preventDefault();
+    console.log(cry)
+    if(pokeInfo){
+      cry = new Audio(pokeInfo?.cries?.legacy ? (pokeInfo?.cries?.legacy) : (pokeInfo?.cries?.latest));
+    } else {
+      cry = new Audio(pokemons?.cries?.legacy ? (pokemons?.cries?.legacy) : (pokemons?.cries?.latest))
+    }
     cry.play();
   };
 
@@ -53,7 +61,7 @@ const PokeCard = ({ pokemon, pokemons, searchName }) => {
 
   return (
     <div>
-      <div className={`card-container-inside border-${pokeData?.types[0].type.name}`} >
+      <div className={`card-container-inside border-${pokeData?.types[0].type.name }`} >
         <div className={`img-background bg-${pokeData?.types[0]?.type?.name}`}>
           {isLoading ? 
             (<div className="pokeball-loader"></div>) :

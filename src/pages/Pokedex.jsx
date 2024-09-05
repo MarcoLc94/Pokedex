@@ -39,7 +39,8 @@ const Pokedex = ({ name }) => {
 
   const handleSearch = (event) => {
     event.preventDefault();
-    const poke = inputName.current.value;
+    const poke = inputName.current.value.toLowerCase();
+    console.log(poke)
     setSearchName(poke);
   };
 
