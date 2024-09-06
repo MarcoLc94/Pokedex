@@ -20,18 +20,11 @@ const useFetch = () => {
   const getByName = (url, name) => {
     return axios.get(url)
       .then((response) => {
-        const result = response.data
-        console.log(response.data)
-        if (result) {
-          setResponse(result);
-          console.log(result)
-        } else {
-          setResponse(null);
-          setError(`No se encontró un Pokémon con el nombre "${name}"`);
-        }
+          setResponse(response.data);
+          console.log(name)
       })
       .catch((error) => {
-        console.error(error);
+        console.error((error) => console.log(error));
         setError(error);
       });
   };
