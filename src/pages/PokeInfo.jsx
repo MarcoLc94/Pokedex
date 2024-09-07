@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import "./PokeInfo.css";
@@ -11,6 +11,7 @@ export const PokeInfo = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   const [dataMoves, setDataMoves] = useState("")
+  const inputButton2 = useRef()
 
   useEffect(() => {
     const url = `https://pokeapi.co/api/v2/pokemon/${name}`;
@@ -19,12 +20,13 @@ export const PokeInfo = () => {
   }, []);
 
   useEffect(() => {
-   const url = `https://pokeapi.co/api/v2/move/14/`
+   const url = `https://pokeapi.co/api/v2/move/${10}/`
    getMoves(url).then((response) => {
     console.log(response)
     setDataMoves(response)
+    console.log(data)
    })
-  }, [moves])
+  }, [isOpen])
 
   console.log(data);
 
@@ -38,6 +40,9 @@ export const PokeInfo = () => {
 
   const handleMove = () => {
     setIsOpen(!isOpen);
+    if (inputButton2.current) {
+      console.log(inputButton2.current.name);
+    }
   };
 
   return (
@@ -132,7 +137,7 @@ export const PokeInfo = () => {
           <h2>Movimientos</h2>
           <div className="moves-container">
             {data?.moves.map((move) => (
-              <span key={move.move.name} onClick={handleMove}>
+              <span key={move.move.name} onClick={handleMove} ref={inputButton2} name={`${data?.types[0]?.type?.name.value}`}>
                 {move.move.name}
               </span>
             ))}
