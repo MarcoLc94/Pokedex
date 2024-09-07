@@ -8,8 +8,9 @@ import pokemonTypeIds from "../utils/transformType";
 
 const Pokedex = ({ name }) => {
   const [pokemons, getPokemons, getPokemonByName, error] = useFetch();
-  const [searchName, setSearchName] = useState("");
+  const [searchName, setSearchName] = useState(null);
   const [searchType, setSearchType] = useState("");
+  const [pokeByName1, setPokeByName1] = useState("");
   const inputName = useRef();
   const dropdownData = useRef();
 
@@ -23,29 +24,35 @@ const Pokedex = ({ name }) => {
   }, []);
 
   useEffect(() => {
-    if (searchName) {
-      const url = `https://pokeapi.co/api/v2/pokemon/${searchName}`;
-      getPokemonByName(url, searchName);
-      console.log(url, searchName);
-    }
-  }, [searchName]);
-
-  useEffect(() => {
     if (searchType) {
       const url = `https://pokeapi.co/api/v2/type/${searchType}`;
       getPokemons(url);
+      console.log(pokemons);
     }
   }, [searchType]);
+
+  useEffect(() => {
+    if (searchName) {
+      console.log(searchName);
+      const url = `https://pokeapi.co/api/v2/pokemon/${searchName}`;
+      getPokemonByName(url, searchName).then((response) => {
+        console.log(response)
+        setPokeByName1(response);
+        console.log(pokeByName1);
+      });
+    }
+  }, [searchName]);
 
   const handleSearch = (event) => {
     event.preventDefault();
     const poke = inputName.current.value.toLowerCase();
-    console.log(poke) 
+    console.log(poke);
     setSearchName(poke);
   };
 
   const handleHome = () => {
-    navigate("/");
+    navigate("/pokedex");
+    setSearchName(null);
   };
 
   const handleSelect = (selectedOption) => {
@@ -92,7 +99,11 @@ const Pokedex = ({ name }) => {
         <PokemonTypeDropdown ref={dropdownData} onChange={handleSelect} />
       </div>
       <div className="info-container">
-        {searchType && pokemons?.pokemon ? (
+        {error ? (
+          <div>
+            <p>No se encontraron Pokémon. Intenta nuevamente.</p>
+          </div>
+        ) : searchType && pokemons?.pokemon ? (
           pokemons.pokemon.map(({ pokemon }) => (
             <PokeCard key={pokemon.name} pokemon={pokemon} />
           ))

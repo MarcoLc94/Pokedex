@@ -5,30 +5,42 @@ import { useNavigate } from "react-router-dom";
 
 const PokeCard = ({ pokemon, pokemons, searchName }) => {
   const [isShiny, setIsShiny] = useState(false);
-  const [pokeInfo, getPokeInfo] = useFetch();
+  const [pokeInfo, getPokeInfo, pokeByName, error] = useFetch();
+  const [pokeName, setPokeName] = useState(null);
   const [isTurnAround, setIsTurnAround] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
   let cry;
 
+
+  console.log(searchName);
+
   useEffect(() => {
-    if (!searchName) {
-      setIsLoading(true); 
-      console.log(pokemon.url)
+    console.log("here")
+    if (searchName === null || typeof searchName !== 'string') {
+      console.log("pase el filtro")
+      setIsLoading(true);
+      console.log(pokemon.url);
       getPokeInfo(pokemon.url).then(() => {
-        setIsLoading(false); 
-        console.log(pokeInfo)
-        console.log("entro aqui")
+        setIsLoading(false);
+        console.log(pokeInfo);
+        console.log("entro aqui");
         cry = new Audio(pokeInfo?.cries?.legacy);
       });
-    } else {
-      console.log("entro aca")
-      setIsLoading(true);
-      console.log(pokemons)
-      cry = new Audio(pokeInfo?.cries?.legacy);
-      setIsLoading(false)
     }
-  }, [pokemon, pokemons]);
+  }, [pokemon]);
+
+  useEffect(() => {
+    if (typeof searchName === "string") {
+      setIsLoading(true);
+      console.log(searchName);
+      const url = `https://pokeapi.co/api/v2/pokemon/${searchName}`;
+      pokeByName(url, searchName).then((response) => {
+        setIsLoading(false)
+       setPokeName(response)
+      });
+    }
+  }, [searchName]);
 
   const handleShiny = (event) => {
     event.preventDefault();
@@ -37,11 +49,19 @@ const PokeCard = ({ pokemon, pokemons, searchName }) => {
 
   const handleSound = (event) => {
     event.preventDefault();
-    console.log(cry)
-    if(pokeInfo){
-      cry = new Audio(pokeInfo?.cries?.legacy ? (pokeInfo?.cries?.legacy) : (pokeInfo?.cries?.latest));
+    console.log(cry);
+    if (pokeInfo) {
+      cry = new Audio(
+        pokeInfo?.cries?.legacy
+          ? pokeInfo?.cries?.legacy
+          : pokeInfo?.cries?.latest
+      );
     } else {
-      cry = new Audio(pokemons?.cries?.legacy ? (pokemons?.cries?.legacy) : (pokeInfo?.cries?.latest))
+      cry = new Audio(
+        pokemons?.cries?.legacy
+          ? pokemons?.cries?.legacy
+          : pokeInfo?.cries?.latest
+      );
     }
     cry.play();
   };
@@ -55,56 +75,80 @@ const PokeCard = ({ pokemon, pokemons, searchName }) => {
     navigate(`/pokemon/${pokemon.name}`);
   };
 
-  const pokeData = searchName ? pokemons : pokeInfo;
+  const pokeData = searchName ? pokeName : pokeInfo;
 
-  console.log(pokeData)
+  console.log(pokeData);
+  console.log(searchName);
 
   return (
     <div>
-      <div className={`card-container-inside border-${pokeData?.types[0].type.name}`} >
+      <div
+        className={`card-container-inside border-${pokeData?.types[0].type.name}`}
+      >
         <div className={`img-background bg-${pokeData?.types[0]?.type?.name}`}>
-          {isLoading ? 
-            (<div className="pokeball-loader"></div>) :
-            (<img
+          {isLoading ? (
+            <div className="pokeball-loader"></div>
+          ) : (
+            <img
               src={
-                pokeData?.sprites?.other?.showdown.front_default ? (
-                isTurnAround
-                  ? isShiny
-                    ? pokeData?.sprites?.other?.showdown?.back_shiny
-                    : pokeData?.sprites?.other?.showdown?.back_default
+                pokeData?.sprites?.other?.showdown.front_default
+                  ? isTurnAround
+                    ? isShiny
+                      ? pokeData?.sprites?.other?.showdown?.back_shiny
+                      : pokeData?.sprites?.other?.showdown?.back_default
+                    : isShiny
+                    ? pokeData?.sprites?.other?.showdown?.front_shiny
+                    : pokeData?.sprites?.other?.showdown?.front_default
                   : isShiny
-                  ? pokeData?.sprites?.other?.showdown?.front_shiny
-                  : pokeData?.sprites?.other?.showdown?.front_default) : isShiny ? (pokeData?.sprites?.other["official-artwork"].front_shiny)
-                  : (pokeData?.sprites?.other["official-artwork"].front_default)
+                  ? pokeData?.sprites?.other["official-artwork"].front_shiny
+                  : pokeData?.sprites?.other["official-artwork"].front_default
               }
               alt={pokeData?.name}
               onClick={handleNavigate}
-            />)
-          }
+            />
+          )}
         </div>
         <div className="card-info-inside">
-          <h2 className={`text-color-${pokeData?.types[0]?.type?.name}`}>{pokeData?.name}</h2>
+          <h2 className={`text-color-${pokeData?.types[0]?.type?.name}`}>
+            {pokeData?.name}
+          </h2>
           <p>Type</p>
           <div className="types-poke">
-            {isLoading ? (<div className="loader"></div>) :
-            (pokeData?.types.map((type) => (
-              <p key={type.type.url}>{type.type.name}</p>
-            )))}
+            {isLoading ? (
+              <div className="loader"></div>
+            ) : (
+              pokeData?.types.map((type) => (
+                <p key={type.type.url}>{type.type.name}</p>
+              ))
+            )}
           </div>
         </div>
         <hr />
         <div className="card-info-details">
-          {isLoading ? (<div className="loader"></div>) : 
-          (pokeData?.stats.map((stat) => (
-            <span key={stat.stat.url} className="stat-num">
-              <span className="span-title">{stat.stat.name}</span>
-              <span>{stat.base_stat}</span>
-            </span>
-          )))}
+          {isLoading ? (
+            <div className="loader"></div>
+          ) : (
+            pokeData?.stats.map((stat) => (
+              <span key={stat.stat.url} className="stat-num">
+                <span className="span-title">{stat.stat.name}</span>
+                <span>{stat.base_stat}</span>
+              </span>
+            ))
+          )}
         </div>
         <div className="button-card-cry">
-          <button className={`button-base button-${pokeData?.types[0]?.type?.name}`} onClick={handleShiny}>{isShiny ? "Default" : "Shiny"}</button>
-          <button className={`button-base button-${pokeData?.types[0]?.type?.name}`} onClick={handleSound}>Cry</button>
+          <button
+            className={`button-base button-${pokeData?.types[0]?.type?.name}`}
+            onClick={handleShiny}
+          >
+            {isShiny ? "Default" : "Shiny"}
+          </button>
+          <button
+            className={`button-base button-${pokeData?.types[0]?.type?.name}`}
+            onClick={handleSound}
+          >
+            Cry
+          </button>
           <a onClick={handleTurn} className="button-base">
             <svg
               xmlns="http://www.w3.org/2000/svg"

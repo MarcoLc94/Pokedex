@@ -81,11 +81,15 @@
 }
 
 .card-container {
-  padding: 20px;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  width: 93%;
+  gap: 10px;
+  padding: 20px;
 
   .input-container {
+    
     input {
       height: 30px;
       border: none;
@@ -119,7 +123,7 @@
   align-items: center;
 }
 
-@media(width < 400px) {
+@media(width < 600px) {
   .info-container {
     flex-direction: column;
     
