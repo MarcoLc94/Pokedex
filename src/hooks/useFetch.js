@@ -10,6 +10,7 @@ const useFetch = () => {
     const response = await axios.get(url)
         setResponse(response.data);
         setError(null);
+        console.log(response.data)
         return response.data  // Limpiar error en caso de éxito
       }
       catch(error) {
@@ -20,9 +21,10 @@ const useFetch = () => {
 
 const getByName = async (url, name) => {
   try {
-    const response = await axios.get(url);
-    setResponse(response.data);
-    return response.data; // Retornar explícitamente la respuesta
+    const result = await axios.get(url);
+    setResponse(result.data);
+    console.log(result.data)
+    return result.data; // Retornar explícitamente la respuesta
   } catch (error) {
     console.error(error);
     console.log(name)

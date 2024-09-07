@@ -11,6 +11,7 @@ const Pokedex = ({ name }) => {
   const [searchName, setSearchName] = useState(null);
   const [searchType, setSearchType] = useState("");
   const [pokeByName1, setPokeByName1] = useState("");
+  const [isError, setIsError] = useState(null);
   const inputName = useRef();
   const dropdownData = useRef();
 
@@ -33,15 +34,28 @@ const Pokedex = ({ name }) => {
 
   useEffect(() => {
     if (searchName) {
-      console.log(searchName);
+      console.log(pokeByName1);
       const url = `https://pokeapi.co/api/v2/pokemon/${searchName}`;
-      getPokemonByName(url, searchName).then((response) => {
-        console.log(response)
-        setPokeByName1(response);
-        console.log(pokeByName1);
-      });
+      getPokemonByName(url, searchName)
+        .then((response) => {
+          console.log(response);
+          setIsError(false);
+          setPokeByName1(response);
+        })
+        .catch((error) => {
+          console.error(error)
+          setIsError(error)
+          setPokeByName1(searchName)
+          console.log(pokeByName1)
+        });
     }
   }, [searchName]);
+
+  useEffect(() => {
+    if (pokeByName1) {
+      console.log("Valor actualizado de pokeByName1:", pokeByName1);
+    }
+  }, [pokeByName1]);
 
   const handleSearch = (event) => {
     event.preventDefault();
@@ -99,22 +113,27 @@ const Pokedex = ({ name }) => {
         <PokemonTypeDropdown ref={dropdownData} onChange={handleSelect} />
       </div>
       <div className="info-container">
-        {error ? (
-          <div>
-            <p>No se encontraron Pokémon. Intenta nuevamente.</p>
+        {isError ? (
+          <div className="error-div">
+            <p>⚠ No existe el pokemon</p>
+            <span className="shake-animation">{searchName}</span>
+            <p> Por favor intenta otra vez.</p>
           </div>
         ) : searchType && pokemons?.pokemon ? (
           pokemons.pokemon.map(({ pokemon }) => (
             <PokeCard key={pokemon.name} pokemon={pokemon} />
           ))
-        ) : searchName && pokemons && !error ? (
-          <PokeCard pokemons={pokemons} searchName={searchName} />
-        ) : pokemons?.results ? (
+        ) : searchName && pokeByName1  ? (
+          <PokeCard pokeByName1={pokeByName1} searchName={searchName} />
+        ) : pokemons?.results && !isError ? (
           pokemons.results.map((pokemon) => (
             <PokeCard key={pokemon.name} pokemon={pokemon} />
           ))
         ) : (
-          <p>No se encontraron Pokémon. Intenta nuevamente.</p>
+          <div className="error-div">
+            <p className="shake-animation">⚠ No se encontro <span>{searchName}</span>, Intenta nuevamente.</p>
+            <img src="./pikachusad.png" alt="" />
+          </div>
         )}
       </div>
     </div>

@@ -3,7 +3,7 @@ import "./PokeCard.css";
 import useFetch from "../hooks/useFetch";
 import { useNavigate } from "react-router-dom";
 
-const PokeCard = ({ pokemon, pokemons, searchName }) => {
+const PokeCard = ({ pokemon, pokemons, searchName, pokeByName1 }) => {
   const [isShiny, setIsShiny] = useState(false);
   const [pokeInfo, getPokeInfo, pokeByName, error] = useFetch();
   const [pokeName, setPokeName] = useState(null);
@@ -37,10 +37,20 @@ const PokeCard = ({ pokemon, pokemons, searchName }) => {
       const url = `https://pokeapi.co/api/v2/pokemon/${searchName}`;
       pokeByName(url, searchName).then((response) => {
         setIsLoading(false)
+        console.log(response)
        setPokeName(response)
+       console.log(pokeName)
       });
     }
   }, [searchName]);
+
+  // Nuevo useEffect para cuando pokeName cambia
+useEffect(() => {
+  if (pokeName) {
+    console.log("El valor de pokeName ha cambiado: ", pokeName);
+    // Aquí puedes trabajar con el nuevo valor de pokeName
+  }
+}, [pokeName]);
 
   const handleShiny = (event) => {
     event.preventDefault();
@@ -72,7 +82,7 @@ const PokeCard = ({ pokemon, pokemons, searchName }) => {
   };
 
   const handleNavigate = () => {
-    navigate(`/pokemon/${pokemon.name}`);
+    navigate(`/pokemon/${pokemon ? pokemon.name : pokeData.name}`);
   };
 
   const pokeData = searchName ? pokeName : pokeInfo;

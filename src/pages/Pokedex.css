@@ -121,6 +121,33 @@
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+
+  .error-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 40vh;
+    justify-content: center;
+
+    img {
+      width: 150px;
+    }
+
+    p{
+      color: red;
+      font-weight: 700;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+    }
+
+    span{
+      color: red;
+      font-weight: 900;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      font-size: 18px;
+    }
+  }
 }
 
 @media(width < 600px) {
@@ -177,4 +204,21 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+.shake-animation {
+  display: inline-block; /* Asegura que el elemento tenga un tamaño adecuado para la animación */
+  animation: shake 0.5s ease-in-out 2;
 }

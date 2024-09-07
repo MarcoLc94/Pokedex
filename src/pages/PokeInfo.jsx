@@ -7,7 +7,10 @@ export const PokeInfo = () => {
   const { name } = useParams();
   const navigate = useNavigate();
   const [data, getData] = useFetch();
+  const [moves, getMoves] = useFetch()
   const [isLoading, setIsLoading] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+  const [dataMoves, setDataMoves] = useState("")
 
   useEffect(() => {
     const url = `https://pokeapi.co/api/v2/pokemon/${name}`;
@@ -15,10 +18,26 @@ export const PokeInfo = () => {
     setIsLoading(false);
   }, []);
 
+  useEffect(() => {
+   const url = `https://pokeapi.co/api/v2/move/14/`
+   getMoves(url).then((response) => {
+    console.log(response)
+    setDataMoves(response)
+   })
+  }, [moves])
+
   console.log(data);
 
   const handleBack = () => {
     navigate("/pokedex");
+  };
+
+  const modalStyle = {
+    display: isOpen ? "flex" : "none",
+  }
+
+  const handleMove = () => {
+    setIsOpen(!isOpen);
   };
 
   return (
@@ -113,8 +132,17 @@ export const PokeInfo = () => {
           <h2>Movimientos</h2>
           <div className="moves-container">
             {data?.moves.map((move) => (
-              <span key={move.move.name}>{move.move.name}</span>
+              <span key={move.move.name} onClick={handleMove}>
+                {move.move.name}
+              </span>
             ))}
+             <div id="modal" className={`modal backg-${data?.types[0].type.name}`} style={modalStyle}>
+                  <h2>{dataMoves?.name}</h2>
+                  <div>
+                    <span>Power:</span><span>{dataMoves?.power}</span>
+                  </div>
+                  <button id="close-btn" onClick={handleMove}>Cerrar</button>
+             </div>
           </div>
         </div>
       </div>

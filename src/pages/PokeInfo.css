@@ -140,11 +140,18 @@
         display: flex;
         justify-content: space-around;
         width: 80vw;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px; 
 
         .data-inside-detail {
           display: flex;
           justify-content: space-around;
           gap: 20px;
+          padding: 10px;
+
+          
+          
         }
       }
 
@@ -489,8 +496,9 @@
       text-align: center;
       display: flex;
       flex-direction: column;
-
       gap: 10px;
+
+      
 
       h2 {
         margin: 10px;
@@ -504,6 +512,45 @@
         height: 100%;
         padding: 20px;
         gap: 10px;
+
+        .modal-background {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background-color: rgba(0, 0, 0, 0.5); /* Color semitransparente */
+          backdrop-filter: blur(8px); /* Efecto de desenfoque */
+          z-index: 999; /* Debajo del modal pero encima del resto del contenido */
+        }
+       
+        
+        .modal {
+          position: fixed; /* Cambia a fixed para que el modal flote */
+          display: flex;
+          flex-direction: column;
+          background-color: gray;
+          height: 80vh;
+          width: 80vw;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%); /* Centrar el modal */
+          justify-content: center;
+          z-index: 1000; /* Asegura que esté sobre otros elementos */
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          opacity: 0.9;
+        }
+        
+        #close-btn {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          background-color: red;
+          color: white;
+          border: none;
+          padding: 10px;
+          cursor: pointer;
+        }
 
         span {
           border: 5px solid beige;
